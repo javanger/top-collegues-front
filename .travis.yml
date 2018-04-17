@@ -16,4 +16,4 @@ notifications:
   email:
     on_success: never
     on_failure: always
-  slack:diginamic:nIQwPkWk2zfq2fjtzxMWhuBD#travis
+  slack: diginamic:nIQwPkWk2zfq2fjtzxMWhuBD#travis
