@@ -7,13 +7,15 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DemoComponent } from './demo/demo.component';
 import { BandeauComponentComponent } from './bandeau-component/bandeau-component.component';
 import { AvisComponentComponent } from './avis-component/avis-component.component';
+import { CollegueComponentComponent } from './collegue-component/collegue-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     BandeauComponentComponent,
-    AvisComponentComponent
+    AvisComponentComponent,
+    CollegueComponentComponent
      ],
   imports: [
     BrowserModule,
