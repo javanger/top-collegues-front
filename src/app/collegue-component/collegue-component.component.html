@@ -1,0 +1,16 @@
+<div class="card-md-4">
+
+  <!--Card image-->
+  <img class="img-fluid" src= {{collegue.image}} alt="Card image cap">
+
+  <!--Card content-->
+  <div class="card-body">
+
+    <!--Text-->
+    <p class="card-text">{{collegue.pseudo}}</p>
+    <p class="card-text">{{collegue.score}}</p>
+    
+    <app-avis-component (avisEvent)="impactForm($event)"></app-avis-component>
+  </div>
+
+</div>
