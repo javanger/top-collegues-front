@@ -1,5 +1,4 @@
-# TopColleguesFront
-[![Build Status](https://travis-ci.org/AlexisDarcy/top-collegues-front.svg?branch=master)](https://travis-ci.org/AlexisDarcy/top-collegues-front)
+# TopColleguesFront [![Build Status](https://travis-ci.org/AlexisDarcy/top-collegues-front.svg?branch=master)](https://travis-ci.org/AlexisDarcy/top-collegues-front)
 
 https://alexisdarcy.github.io/top-collegues-front/
 
