@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href https://github.com/buteauaxel/top-collegues-front",
+    "build": "ng build --prod --base-href https://buteauaxel.github.io/top-collegues-front/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
