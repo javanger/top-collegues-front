@@ -1,0 +1,11 @@
+
+<div class="card">
+  <img class="card-img-top mx-auto d-block" src={{collegue.photo}} alt="Card image cap">
+  <div class="card-body">
+  <!--Title-->
+    <h4 class="card-title text-center">{{collegue.pseudo}}</h4>
+    <p class="card-text text-center">{{collegue.score}}</p>
+  <!--Text-->
+    <app-avis (avis)="score($event)"></app-avis>
+  </div>
+</div>  
