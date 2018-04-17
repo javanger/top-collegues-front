@@ -1,5 +1,6 @@
 # TopColleguesFront
-
+https://travis-ci.org/AlexisDarcy/top-collegues-front.svg?branch=master
+https://alexisdarcy.github.io/top-collegues-front/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
