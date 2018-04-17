@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DemoComponent } from './demo/demo.component';
+import { BandeauComponent } from './bandeau/bandeau.component';
+import { AvisComponent } from './avis/avis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent
+    DemoComponent,
+    BandeauComponent,
+    AvisComponent
   ],
   imports: [
     BrowserModule,
