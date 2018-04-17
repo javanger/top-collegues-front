@@ -1,5 +1,4 @@
 # TopColleguesFront
-https://travis-ci.org/AlexisDarcy/top-collegues-front.svg?branch=master
 https://alexisdarcy.github.io/top-collegues-front/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
@@ -12,7 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
+[![Build Status](https://travis-ci.org/AlexisDarcy/top-collegues-front.svg?branch=master)](https://travis-ci.org/AlexisDarcy/top-collegues-front)
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
