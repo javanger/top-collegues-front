@@ -6,13 +6,15 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DemoComponent } from './demo/demo.component';
 import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
+import { CollegueComponent } from './collegue/collegue.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     BandeauComponent,
-    AvisComponent
+    AvisComponent,
+    CollegueComponent
   ],
   imports: [
     BrowserModule,
