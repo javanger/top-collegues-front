@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "ng build --prod --base-href https://LefebvreV.github.io/top-collegues-front/",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod --base-href https://LefebvreV.github.io/top-collegues-front/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
