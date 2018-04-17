@@ -14,11 +14,4 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  ligne(event:Avis){
-    if(event == Avis.AIMER)
-      this.ligneAfficher = "Vous avez cliquer sur J'aime"
-    else if(event == Avis.DETESTER)
-      this.ligneAfficher = "Vous avez cliquer sur Je deteste"
-  }
 }
