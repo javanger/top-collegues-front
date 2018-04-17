@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
