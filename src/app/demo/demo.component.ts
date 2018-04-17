@@ -8,6 +8,9 @@ import { Avis } from '../models';
 })
 export class DemoComponent implements OnInit {
 
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
   avisExprime:string = ""
   isHidden:boolean = true
 
