@@ -1,0 +1,17 @@
+<div class="card">
+
+  <!--Card image-->
+  <img class="img-fluid" src={{c1.photo}}>
+
+  <!--Card content-->
+  <div class="card-body">
+      <!--Title-->
+      <h4 class="card-title text-center">{{c1.nom}}</h4>
+      <!--Text-->
+      <p class="card-text text-center">{{c1.note}}</p>
+      <br/>
+      <app-avis-component (formEvent)="ajoutAvis($event)"></app-avis-component> <br/>
+      
+  </div>
+
+</div>
