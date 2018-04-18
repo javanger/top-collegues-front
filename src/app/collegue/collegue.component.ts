@@ -4,10 +4,10 @@ import { Avis } from '../models';
 
 @Component({
   selector: 'app-collegue-component',
-  templateUrl: './collegue-component.component.html',
-  styleUrls: ['./collegue-component.component.scss']
+  templateUrl: './collegue.component.html',
+  styleUrls: ['./collegue.component.scss']
 })
-export class CollegueComponentComponent {
+export class CollegueComponent {
 
   @Input() collegue: Collegue;
 

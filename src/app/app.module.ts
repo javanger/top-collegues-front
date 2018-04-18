@@ -5,9 +5,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
-import { BandeauComponentComponent } from './bandeau-component/bandeau-component.component';
-import { AvisComponentComponent } from './avis-component/avis-component.component';
-import { CollegueComponentComponent } from './collegue-component/collegue-component.component';
+import { BandeauComponent } from './bandeau/bandeau.component';
+import { AvisComponent } from './avis/avis.component';
+import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
 
 
@@ -15,9 +15,9 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
   declarations: [
     AppComponent,
     DemoComponent,
-    BandeauComponentComponent,
-    AvisComponentComponent,
-    CollegueComponentComponent,
+    BandeauComponent,
+    AvisComponent,
+    CollegueComponent,
     ListeColleguesComponent
   ],
   imports: [
