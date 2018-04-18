@@ -1,0 +1,4 @@
+<div class="row justify-content-center">
+  <button *ngIf="isVisiblePos()" type="button" (click)="aimer()" class="btn btn-floating btn-success waves-light btn-sm" mdbRippleRadius>J'aime</button>
+  <button *ngIf="isVisibleNeg()" type="button" (click)="detester()" class="btn btn-floating btn-danger waves-light btn-sm" mdbRippleRadius>Je déteste</button>
+</div>
