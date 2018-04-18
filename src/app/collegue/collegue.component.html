@@ -1,0 +1,19 @@
+
+<div class="card col-md-4">
+
+  <!--Card image-->
+  <img class="img-fluid" src= {{collegue.img}} alt="Card image cap">
+
+  <!--Card content-->
+  <div class="card-body">
+      <!--Title-->
+      <h4 class="card-title">{{collegue.name}}</h4>
+      <!--Text-->
+      <p class="card-text">{{collegue.score}}</p>
+      
+
+      <app-avis (avis)="testAvis($event)"></app-avis>
+     
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+<h1>Page de démonstration des composants de l'application</h1>
+<app-bandeau></app-bandeau>
+
+<h1>AvisComponent</h1>
+<app-avis (avis)="testAvis($event)"></app-avis>
+{{choix}}
+
+<app-collegue [collegue]  = "collegueDefaut" (avis) ="testAvis($event)" ></app-collegue>
+
+
