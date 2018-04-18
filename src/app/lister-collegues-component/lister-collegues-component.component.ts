@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Avis, Collegue } from "../models";
 
 @Component({
   selector: 'app-lister-collegues-component',
@@ -9,10 +10,15 @@ export class ListerColleguesComponentComponent implements OnInit {
 
   constructor() { }
 
+@Input() listeCollegues:Array<Collegue>;
+
+
   ngOnInit() {
   }
   actualiser(){
-    
-  }
 
+  }
+ 
+
+  
 }

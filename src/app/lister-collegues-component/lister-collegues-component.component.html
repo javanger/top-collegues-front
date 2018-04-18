@@ -2,9 +2,11 @@
   <button (click)="actualiser()" type="button" class="btn btn-primary waves-light" mdbRippleRadius>Raffraichir la liste</button>
   <br/>
 </div>
-<div class="row">
-    <div *ngForOf="">
+<br/>
 
-
-  <app-
-</div>
+  <div class="row">
+      
+    <div *ngFor="let coll of listeCollegues" class="col-3 p-1 m-5" >
+      <app-collegue-component  [collegue]="coll" ></app-collegue-component>
+    </div>
+  </div>
