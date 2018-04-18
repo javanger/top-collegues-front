@@ -1,4 +1,4 @@
-<div class="card-md-4">
+<div class="card col-12 col-sm-6 col-md-4">
 
   <!--Card image-->
   <img class="img-fluid" src= {{collegue.image}} alt="Card image cap">
@@ -9,8 +9,11 @@
     <!--Text-->
     <p class="card-text">{{collegue.pseudo}}</p>
     <p class="card-text">{{collegue.score}}</p>
-    
+
     <app-avis-component (avisEvent)="impactForm($event)"></app-avis-component>
+
+    <p class="card-text">{{avisAffiche}}</p>
+    
   </div>
 
 </div>

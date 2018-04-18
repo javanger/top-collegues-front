@@ -1,6 +1,5 @@
 import { Component, Input, EventEmitter, Output, Inject } from "@angular/core";
 import { Avis } from '../models';
-import { AstVisitor } from "@angular/compiler";
 
 @Component({
   selector: 'app-avis-component',
