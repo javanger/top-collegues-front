@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter ,Output } from '@angular/core';
+import { Component, OnInit, EventEmitter ,Output, Input } from '@angular/core';
 import {Avis} from "../../model"
 
 
@@ -9,7 +9,10 @@ import {Avis} from "../../model"
 })
 export class AvisComponent implements OnInit {
 
-  constructor() { }
+  @Input() avisScore:number
+
+  constructor() { 
+  }
 
   ngOnInit() {
   }
@@ -21,5 +24,19 @@ export class AvisComponent implements OnInit {
   }
   detester(){
     this.buttonEvent.emit(Avis.DETESTER)
+  }
+
+  isAimerVisible():boolean{
+    let visible:boolean = true
+    if(this.avisScore >= 1000)
+      visible=false
+    return visible
+  }
+
+  isDetesterVisible():boolean{
+    let visible:boolean = true
+    if(this.avisScore <= -1000)
+      visible=false
+    return visible
   }
 }

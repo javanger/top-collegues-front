@@ -1,8 +1,8 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top img-fluid" src="{{collegue1.photo}}" alt="Card image cap">
+<div class="card" >
+    <img class="card-img-top img-fluid" src="{{collegue.photo}}" alt="Card image cap">
     <div class="card-body">
-      <p class="card-text text-center">{{collegue1.pseudo}}</p>
-      <p class="card-text text-center">{{collegue1.score}}</p>
-      <avis (buttonEvent)="scoreModif($event)"></avis>
+      <p class="card-text text-center">{{collegue.pseudo}}</p>
+      <p class="card-text text-center">{{collegue.score}}</p>
+      <avis (buttonEvent)="scoreModif($event)" [avisScore]="collegue.score"></avis>
     </div>
   </div>

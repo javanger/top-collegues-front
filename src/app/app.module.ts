@@ -8,6 +8,7 @@ import { DemoComponent } from './demo/demo.component';
 import { BandeauComponent } from './demo/bandeau/bandeau.component';
 import { AvisComponent} from './demo/avis/avis.component';
 import { CollegueComponent } from './demo/collegue/collegue.component';
+import { ListeColleguesComponent } from './demo/liste-collegues/liste-collegues.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CollegueComponent } from './demo/collegue/collegue.component';
     DemoComponent,
     BandeauComponent,
     AvisComponent,
-    CollegueComponent
+    CollegueComponent,
+    ListeColleguesComponent
   ],
   imports: [
     BrowserModule,

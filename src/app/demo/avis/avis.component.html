@@ -1,4 +1,8 @@
-<div class="row">
-  <button (click)="aimer()" class ="btn btn-success">J'aime</button>
-  <button (click)="detester()" class ="btn btn-danger">Je deteste</button>
+<div class="row justify-content-center">
+  <div *ngIf="isAimerVisible()">
+    <button (click)="aimer()" class ="btn btn-sm btn-success">J'aime</button>
+  </div>
+  <div *ngIf="isDetesterVisible()" >
+    <button (click)="detester()" class ="btn btn-sm btn-danger">Je deteste</button>
+  </div>
 </div>
