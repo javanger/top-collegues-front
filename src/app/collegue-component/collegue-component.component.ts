@@ -9,8 +9,6 @@ import { Avis } from '../models';
 })
 export class CollegueComponentComponent {
 
-  avisAffiche : string = "";
-
   @Input() collegue: Collegue;
 
   constructor() { }
@@ -18,9 +16,9 @@ export class CollegueComponentComponent {
   impactForm(avis: Avis) {
 
     if(avis == Avis.AIMER) {
-      this.avisAffiche = "Vous avez cliqué sur J'aime"
+      this.collegue.score += 1;
     } else {
-      this.avisAffiche = "Vous avez cliqué sur Je déteste"
+      this.collegue.score -= 1;
     }
   }
 
