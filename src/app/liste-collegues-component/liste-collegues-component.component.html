@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-3 p-2">
+        <button type="button" class="btn btn-outline-primary" mdbWavesEffect>Rafraichir le liste</button>
+    </div>
+</div>
+<div class="row">
+    <div *ngFor="let coll of listeCollegues" class="col-3 p-2">
+        <app-collegue-component  [collegue]="coll"></app-collegue-component>
+    </div>
+</div>
+
