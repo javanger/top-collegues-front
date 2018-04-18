@@ -1,6 +1,6 @@
 # TopColleguesFront
 
-* AHSENE Victor : http:/victorahs.github.io/top-collegues-front
+* AHSENE Victor : https:/victorahs.github.io/top-collegues-front/
 * BUTEAU Axel :  https://buteauaxel.github.io/top-collegues-front/
 * CHENE Emmanuel : https://echene.github.io/top-collegues-front/
 * DARCY Alexis :  https://alexisdarcy.github.io/top-collegues-front/
