@@ -1,0 +1,6 @@
+<button class="btn btn-outline-primary mb-4" mdbRippleRadiu>Rafraichir la liste</button>
+<div class="row">
+  <div class="col-lg-4 mb-4" *ngFor="let col of collegues">
+    <app-collegue [collegue]="col"></app-collegue>
+  </div>
+</div>

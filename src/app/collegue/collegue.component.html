@@ -1,8 +1,15 @@
+<div class="card">
 
+  <!--Card image-->
+  <img class="img-fluid" src="{{collegue.photo}}" alt="Card image cap">
 
-<img src="{{collegue.photo}}" class="mx-auto d-block" alt="collegue-image">
-
-<h3>{{collegue.pseudo}}</h3>
-<h3>+ {{collegue.score}}</h3>
-<app-avis (choix)="afficher($event)" ></app-avis>
-<p>{{avis}}</p>
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <h4 class="card-title">{{collegue.pseudo}}</h4>
+    <!--Text-->
+    <p class="card-text">+ {{collegue.score}}</p>
+    <app-avis (choix)="afficher($event)"></app-avis>
+    {{avis}}
+  </div>
+</div>
