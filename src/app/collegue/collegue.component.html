@@ -10,7 +10,7 @@
       <!--Text-->
       <p class="card-text text-center">{{collegue.note}}</p>
       <br/>
-      <app-avis-component [note] = "collegue.note" (formEvent)="ajoutAvis($event)" ></app-avis-component>
+      <app-avis [note] = "collegue.note" (formEvent)="ajoutAvis($event)" ></app-avis>
       <br/>
 
     </div>
