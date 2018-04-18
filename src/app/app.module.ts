@@ -4,17 +4,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { DemoComponent } from './demo/demo.component';
-import { BandeauComponent } from './demo/bandeau/bandeau.component';
-import { AvisComponent} from './demo/avis/avis.component';
-import { CollegueComponent } from './demo/collegue/collegue.component';
-import { ListeColleguesComponent } from './demo/liste-collegues/liste-collegues.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { BandeauComponent } from './accueil/bandeau/bandeau.component';
+import { AvisComponent} from './accueil/avis/avis.component';
+import { CollegueComponent } from './accueil/collegue/collegue.component';
+import { ListeColleguesComponent } from './accueil/liste-collegues/liste-collegues.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
+    AccueilComponent,
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
