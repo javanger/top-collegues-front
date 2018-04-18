@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Avis} from "../model"
+import { Avis, Collegue } from "../model"
+import { CollegueService } from '../services/collegue.service';
 
 @Component({
   selector: 'accueil',
@@ -8,10 +9,19 @@ import {Avis} from "../model"
 })
 export class AccueilComponent implements OnInit {
 
-  ligneAfficher:string = "Vous n'avez pas encore cliqué";
+  listeCollegue:Array<Collegue> = []
 
-  constructor() { }
+  constructor(private pCollegue:CollegueService) {
+    this.list()
+   }
 
   ngOnInit() {
+  }
+
+  list() {
+    // utilisation du service
+    this.pCollegue.listerCollegues().then(
+      c => this.listeCollegue = c
+    )
   }
 }
