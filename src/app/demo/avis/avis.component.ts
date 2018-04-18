@@ -14,6 +14,24 @@ export class AvisComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  @Input() score:number;
+
+  isVisiblePos():boolean {
+    let visible:boolean = true
+    if(this.score >= 1000){
+      visible = false
+    }
+    return visible
+  }
+  isVisibleNeg():boolean{
+    let visible:boolean = true
+    if(this.score <= -1000){
+      visible = false
+    }
+    return visible
+  }
+
 
   @Output() avis: EventEmitter<Avis> = new EventEmitter();
 

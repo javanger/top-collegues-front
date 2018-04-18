@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Avis, Collegue } from '../../models';
 
 @Component({
@@ -14,7 +14,6 @@ export class CollegueComponent implements OnInit {
   }
 
   avisExprime:string = ""
-  collegue:Collegue = new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","Travis",0)
 
   score(event:Avis){
     if(event === Avis.AIMER){
@@ -25,4 +24,5 @@ export class CollegueComponent implements OnInit {
     }
   }
 
+  @Input() collegue:Collegue;
 }
