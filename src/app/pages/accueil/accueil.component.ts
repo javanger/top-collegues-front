@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Avis, Collegue } from "../model"
-import { CollegueService } from '../services/collegue.service';
+import { Avis, Collegue, Mode } from "../../model"
+import { CollegueService } from '../../services/collegue.service';
 
 @Component({
   selector: 'accueil',
@@ -10,6 +10,7 @@ import { CollegueService } from '../services/collegue.service';
 export class AccueilComponent implements OnInit {
 
   listeCollegue:Array<Collegue> = []
+  mode:Mode = Mode.DEFAULT
 
   constructor(private pCollegue:CollegueService) {
     this.list()

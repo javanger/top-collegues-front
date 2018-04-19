@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Collegue} from "../../model"
+import { Collegue, Mode} from "../../model"
 import { CollegueComponent} from '../collegue/collegue.component';
 import { CollegueService } from '../../services/collegue.service';
 
@@ -11,15 +11,26 @@ import { CollegueService } from '../../services/collegue.service';
 export class ListeColleguesComponent implements OnInit {
 
   @Input() list:Array<Collegue>
+  @Input() mode:Mode
   constructor(private pCollegue:CollegueService) { }
 
   ngOnInit() {
   }
 
   maj():void{
-    this.pCollegue.listerCollegues().then(
-      collegues => this.list = collegues
-    )
+    if (this.mode === Mode.DEFAULT){
+      this.pCollegue.listerCollegues().then(
+        collegues => this.list = collegues
+      )}
+    else if(this.mode === Mode.TOP3){
+      this.pCollegue.listerCollegues().then(collegues => {
+        let temp:Array<Collegue> = []
+        temp.push(collegues[0])
+        temp.push(collegues[1])
+        temp.push(collegues[2])
+        this.list = temp
+      })
+    }
   }
 
   

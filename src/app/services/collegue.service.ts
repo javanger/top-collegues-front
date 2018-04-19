@@ -18,14 +18,20 @@ export class CollegueService {
     return this._http.get(URL_BACKEND + "collegue")
       .toPromise()
       .then((data: any) => {
-        return data.map((c:any) => new Collegue(c.pseudo, c.score, c.url)).sort(function(a,b) {
+        return data.map((c:any) => new Collegue(c.pseudo, c.score, c.url, c.nom, c.prenom, c.adresse, c.email)).sort(function(a,b) {
             return b.score > a.score
-        });  // cas ok 
-      }, (error:any) => {
-          console.log("Erreur : ", error);
-          
+        });
       });
     
+  }
+
+  trouverCollegue(pseudo:string):Promise<Collegue>{
+    return this._http.get(URL_BACKEND + "collegue/" + pseudo)
+    .toPromise()
+    .then((c: any) => {
+       return new Collegue(c.pseudo, c.score, c.url, c.nom, c.prenom, c.adresse, c.email)
+    });
+
   }
   
 

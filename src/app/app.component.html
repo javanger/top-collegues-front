@@ -1,7 +1,21 @@
 <div class="container-fluid">
     <div class = "row">
-        <div class ="col offset-1">
-            <accueil></accueil>
+        <div class ="col-8 offset-1">
+            <menu></menu>
         </div>
+    </div>
+    <div class = "row">
+        <div class ="col-9 offset-1">
+            <div id="content">
+                    <!-- le composant défini dans la route courante va être inséré à cet endroit -->
+                
+                    <!-- au regard de la configuration précédente, 
+                        /page1 va insérer le composant AComponent à cet emplacement
+                        /page2 a insérer le composant BComponent à cet emplacement
+                    -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+       
     </div>
 </div>
