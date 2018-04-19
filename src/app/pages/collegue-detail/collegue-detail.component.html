@@ -1,0 +1,31 @@
+<div class ="container-fluid">
+  <div class="row">
+    <div class ="col">
+      <div class="row mt-2">
+        <div class = "col text-center">
+          <img class="img-fluid" src="{{(collegue | async )?.photo}}" alt="Card image cap">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class = "col justify-context-center">
+          <p class=" text-center">{{(collegue | async )?.prenom}} {{(collegue | async )?.nom}} alias {{(collegue | async )?.pseudo}}</p>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class = "col justify-context-center">
+          <p class=" text-center">{{(collegue | async )?.adresse}}   |   {{(collegue | async )?.email}}</p>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class = "col justify-context-center">
+          <p class="text-center">Score actuel : {{(collegue | async )?.score}}</p>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class = "col justify-context-center">
+          <avis (buttonEvent)="scoreModif($event)" [avisScore]="(collegue | async )?.score"></avis>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
