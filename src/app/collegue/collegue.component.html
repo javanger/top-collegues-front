@@ -1,7 +1,7 @@
 <div class="card">
 
   <!--Card image-->
-  <img class="card-img-top img-fluid" src= {{collegue.image}} alt="Card image cap">
+  <img class="card-img-top img-fluid" src= {{collegue.urlImage}} alt="Card image cap">
 
   <!--Card content-->
   <div class="card-body">
@@ -10,17 +10,17 @@
 
         <div class="row">
 
-            <div class="col-12">{{collegue.pseudo}}</div>
+            <div class="col-md-12 text-center">
+                    {{collegue.nom}} {{collegue.prenom}}
+            </div>
+
+            <div class="col-md-12 text-center">
+                    {{collegue.score}}
+            </div>
 
         </div>
 
-        <div class="row">
-
-            <div class="col-12">{{collegue.score}}</div>
-
-        </div>
-
-        <div class="row justify-content-end mt-2">
+        <div class="row justify-content-center mt-2">
 
             <div class="col-12">
                 <app-avis-component (avisEvent)="impactForm($event)"></app-avis-component>

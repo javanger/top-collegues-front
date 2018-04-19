@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -9,6 +10,7 @@ import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
+import { ColleguesService } from './services/collegue.service';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
-    ListeColleguesComponent
-  ],
+    ListeColleguesComponent,
+   
+  ],  
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ColleguesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

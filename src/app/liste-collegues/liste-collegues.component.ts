@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Collegue } from '../models';
+import { ColleguesService } from '../services/collegue.service';
 
 @Component({
   selector: 'app-liste-collegues',
@@ -8,19 +9,16 @@ import { Collegue } from '../models';
 })
 export class ListeColleguesComponent implements OnInit {
 
-  listeCollegues: Collegue[];
+  @Input() listeCollegues: Array<Collegue>;
 
-  constructor() {
-    this.listeCollegues = [new Collegue("Collegue 1", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 2", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 3", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 4", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 5", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 6", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png"),
-    new Collegue("Collegue 7", 0, "http://www.cnfpt.fr/sites/default/files/images/verbatim/field_visuel_verbatim/1488365975/icone_contact.png")];
+  constructor(private serviceCollegue : ColleguesService) {
+
   }
 
   ngOnInit() {
+    this.serviceCollegue.listerCollegues().then((data : any) => {
+      this.listeCollegues = data;
+    })
   }
 
 }

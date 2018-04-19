@@ -8,6 +8,8 @@ import { Avis } from '../models';
 })
 export class AvisComponent {
 
+  @Input() score: number
+
   constructor() { }
 
   @Output() avisEvent: EventEmitter<Avis> = new EventEmitter();
@@ -22,6 +24,24 @@ export class AvisComponent {
 
     this.avisEvent.emit(Avis.DETESTER);
 
+  }
+
+  afficherAimer(): boolean {
+
+    if (this.score >= 1000) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  afficherDetester(): boolean {
+
+    if (this.score >= -1000) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }

@@ -1,18 +1,20 @@
 export enum Avis {
-    AIMER,
-    DETESTER
+    AIMER = "AIMER",
+    DETESTER = "DETESTER"
 }
 
 export class Collegue {
 
-    pseudo: string;
+    nom: string;
+    prenom: string;
     score: number;
-    image: string;
+    urlImage: string;
 
-    constructor(pseudo : string, score : number, image : string) {
-        this.pseudo = pseudo;
+    constructor(nom: string, prenom: string, score: number, urlImage: string) {
+        this.nom = nom;
+        this.prenom = prenom;
         this.score = score;
-        this.image = image;
+        this.urlImage = urlImage;
     }
 
 
