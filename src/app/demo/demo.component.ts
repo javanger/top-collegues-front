@@ -10,7 +10,7 @@ import { CollegueService } from '../services/collegue.service';
 export class DemoComponent implements OnInit {
   text:string = '';
   collegueFictif: Collegue;
-  listeColleguesFictifs:Array<Collegue> = new Array() 
+  listeColleguesFictifs:Array<Collegue> = new Array()
 
   constructor(private cService:CollegueService) { }
 
@@ -20,7 +20,12 @@ export class DemoComponent implements OnInit {
 
   list() {
     this.cService.list().then(
-      data => this.listeColleguesFictifs = data
+      data => {
+        this.listeColleguesFictifs = data
+        this.listeColleguesFictifs.sort((a, b) => {
+          return a.nom.localeCompare(b.nom); 
+        });
+      } 
     )
   }
   changerAvis(avis:Avis) {
