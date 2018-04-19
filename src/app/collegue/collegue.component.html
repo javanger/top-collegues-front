@@ -2,10 +2,10 @@
 <div class="card card-cascade wider">
     <img class="card-img-top" src="{{collegue.photo}}" alt="Card image cap">
     <div class="card-body">
-        <p class="card-text text-center">{{collegue.pseudo}}</p>
+        <p class="card-text text-center">{{collegue.nom}}</p>
         <p class="card-text text-center">{{collegue.score}}</p>
         <div class="row pl-3 text-center">
-            <app-avis-component (avis) ="changerScore($event)"></app-avis-component>
+            <app-avis (avis) ="aVote($event)" [aimeAtif]="isAimerActif()" [detesteAtif]="isDetesterActif()"></app-avis>
         </div>
     </div>
 </div>
