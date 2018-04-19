@@ -15,10 +15,5 @@ export class ListerColleguesComponent implements OnInit {
 
   ngOnInit() {
   }
-  actualiser(){
-
-  }
- 
-
-  
+   
 }

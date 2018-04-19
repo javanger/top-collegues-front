@@ -9,6 +9,8 @@ import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { ListerColleguesComponent } from './lister-collegues/lister-collegues.component';
+import { CollegueService } from './services/collegue.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { ListerColleguesComponent } from './lister-collegues/lister-collegues.co
      ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CollegueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
