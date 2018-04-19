@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   // ajout d'une URL backend en mode développement
-  backendUrl: 'https://top-collegue.herokuapp.com/api/top'
+  backendUrl: 'http://127.0.0.1:8080/api/top'
 };
