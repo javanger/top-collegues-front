@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Avis, Collegue } from '../models';
+import {environment} from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
   })
 };
+const URL_BACKEND = environment.backendUrl;
 
 @Injectable()
 export class CollegueService {
@@ -14,7 +16,7 @@ export class CollegueService {
   constructor(private _http:HttpClient) { }
 
   listerCollegues():Promise<Collegue[]>  {
-    return this._http.get("http://localhost:8080/collegues")
+    return this._http.get(URL_BACKEND+"/collegues")
     .toPromise()
     .then((data: any) => {  
       return data.map((d:any) => new Collegue(d.pseudo, d.score,d.photo))        
@@ -22,7 +24,7 @@ export class CollegueService {
   }
 
   donnerUnAvis(unCollegue:Collegue, avis:Avis):Promise<Collegue>  {
-    return this._http.patch('http://localhost:8080/collegues/' + unCollegue.pseudo,
+    return this._http.patch(URL_BACKEND +"/collegues/" + unCollegue.pseudo,
                             {action : avis},
                             httpOptions)
     .toPromise()
