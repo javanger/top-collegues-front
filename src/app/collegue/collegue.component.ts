@@ -17,8 +17,8 @@ export class CollegueComponent implements OnInit {
   updateScore(avis: Avis) {
     this._cServ.donnerUnAvis(this.collegue, avis)
       .then(data => {
-        this.collegue.photo = data.urlImage;
-        this.collegue.pseudo = data.name;
+        this.collegue.urlImage = data.urlImage;
+        this.collegue.name = data.name;
         this.collegue.score = data.score;
 
       });

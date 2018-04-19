@@ -5,9 +5,9 @@ export enum Avis {
 
 export class Collegue {
   constructor(
-    public pseudo: string,
+    public name: string,
     public score: number,
-    public photo: string
+    public urlImage: string
   ) {}
 }
 

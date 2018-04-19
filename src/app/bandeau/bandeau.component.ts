@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandeauComponent implements OnInit {
 
-  titre:string;
-  description:string;
+  titre: string;
+  description: string;
   constructor() {
     this.titre = "Application Top Collègues";
     this.description = "Les meilleurs collègues du monde";
-   }
+  }
 
   ngOnInit() {
   }
