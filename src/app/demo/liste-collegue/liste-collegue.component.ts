@@ -21,7 +21,7 @@ export class ListeCollegueComponent implements OnInit {
 
   RecupererCollegue(){
     this._collegue.listerCollegues().then((data: Collegue[]) => {  
-      this.listCollegues = data
+      this.listCollegues = data.sort(function(a, b){return b.score - a.score})
     },(error: HttpErrorResponse) => {
       alert("Une erreur est survenue lors de la récuperation des collègues")
       console.log("error", error);
