@@ -1,14 +1,14 @@
 export enum Avis {
-    AIMER = "J'aime",
-    DETESTER = "Je déteste",
+    AIMER = "AIMER",
+    DETESTER = "DETESTER",
 }
 
 export class Collegue {
-    photo:string
     pseudo:string
     score:number
+    photo:string
 
-    constructor(photo:string, pseudo:string,score:number){
+    constructor(pseudo:string,score:number,photo:string){
         this.photo = photo
         this.pseudo = pseudo
         this.score = score

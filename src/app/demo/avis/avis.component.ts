@@ -37,6 +37,7 @@ export class AvisComponent implements OnInit {
 
   aimer(){
     this.avis.emit(Avis.AIMER)
+    
   }
   detester(){
     this.avis.emit(Avis.DETESTER)

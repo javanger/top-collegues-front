@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from "@angular/common/http";
 import { Component, OnInit } from '@angular/core';
 import { Collegue } from '../../models';
+import { CollegueService } from '../../services/collegue.service';
 
 @Component({
   selector: 'app-liste-collegue',
@@ -8,15 +10,21 @@ import { Collegue } from '../../models';
 })
 export class ListeCollegueComponent implements OnInit {
 
-  listCollegues: Array<Collegue> = [new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis1",100), 
-                                    new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis2",-500), 
-                                    new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis3",250), 
-                                    new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis4",10), 
-                                    new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis5",-999), 
-                                    new Collegue("https://img.stackshare.io/stack/332/7d9825fd0e38f5e05831d226afc41d9c.jpeg","travis6",999)];
-  constructor() { }
+  listCollegues: Array<Collegue>
+
+  constructor(private _collegue:CollegueService) {    
+    this.RecupererCollegue()
+  }
 
   ngOnInit() {
   }
 
+  RecupererCollegue(){
+    this._collegue.listerCollegues().then((data: Collegue[]) => {  
+      this.listCollegues = data
+    },(error: HttpErrorResponse) => {
+      alert("Une erreur est survenue lors de la récuperation des collègues")
+      console.log("error", error);
+    });
+  }
 }
