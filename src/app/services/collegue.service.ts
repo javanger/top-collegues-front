@@ -20,7 +20,8 @@ export class CollegueService {
       .then((data: any) => {
         return data.map((c:any) => new Collegue(c.pseudo, c.score, c.url));  // cas ok 
       }, (error:any) => {
-            // cas erreur
+          console.log("Erreur : ", error);
+          
       });
     
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue} from "../../model"
 import { CollegueComponent} from '../collegue/collegue.component';
+import { CollegueService } from '../../services/collegue.service';
 
 @Component({
   selector: 'liste-collegues',
@@ -9,10 +10,15 @@ import { CollegueComponent} from '../collegue/collegue.component';
 })
 export class ListeColleguesComponent implements OnInit {
 
-  @Input() list:Array<Collegue>
-  constructor() { }
+  @Input() list:Collegue[] 
+  constructor(private pCollegue:CollegueService) { }
 
   ngOnInit() {
   }
 
+  maj():void{
+    this.pCollegue.listerCollegues().then(
+      collegues => this.list = collegues
+    )
+  }
 }
