@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Avis, Collegue } from "../models";
 import { CollegueService } from '../services/collegue.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-demo",

@@ -37,4 +37,18 @@ export class CollegueService {
         });
     });
   }
+
+  getCollegue(col: Collegue) : Promise<Collegue> {
+    return new Promise((done, left) => {
+      const URL_API = environment.backendUrl + "/collegues/" + col.name
+      this._http.get(URL_API)
+        .toPromise()
+        .then((data: any) => {
+          done(data);
+        }, (error: any) => {
+          // cas erreur
+          left(error);
+        });
+    });
+  }
 }

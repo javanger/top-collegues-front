@@ -8,6 +8,6 @@
     <h4 class="card-title">{{collegue.name}}</h4>
     <p class="card-text">+ {{collegue.score}}</p>
     <app-avis (choix)="updateScore($event)"></app-avis>
-
+    <a (click)="afficherDetails(collegue)" routerLink="#" class="nav-item nav-link waves-light" routerLinkActive="active">Voir le profil</a>
   </div>
 </div>
