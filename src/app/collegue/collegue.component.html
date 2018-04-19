@@ -1,11 +1,11 @@
 <div class="card">
 
   <!--Card image-->
-  <img class="img-fluid" src="{{collegue.photo}}" alt="Card image cap">
+  <img class="img-fluid" src="{{collegue.urlImage}}" alt="Card image cap">
 
   <!--Card content-->
   <div class="card-body">
-    <h4 class="card-title">{{collegue.pseudo}}</h4>
+    <h4 class="card-title">{{collegue.name}}</h4>
     <p class="card-text">+ {{collegue.score}}</p>
     <app-avis (choix)="updateScore($event)"></app-avis>
 
