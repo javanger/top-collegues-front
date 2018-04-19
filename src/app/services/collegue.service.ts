@@ -18,7 +18,9 @@ export class CollegueService {
     return this._http.get(URL_BACKEND + "collegue")
       .toPromise()
       .then((data: any) => {
-        return data.map((c:any) => new Collegue(c.pseudo, c.score, c.url));  // cas ok 
+        return data.map((c:any) => new Collegue(c.pseudo, c.score, c.url)).sort(function(a,b) {
+            return b.score > a.score
+        });  // cas ok 
       }, (error:any) => {
           console.log("Erreur : ", error);
           

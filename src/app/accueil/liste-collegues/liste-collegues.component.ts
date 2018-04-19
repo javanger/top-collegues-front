@@ -10,7 +10,7 @@ import { CollegueService } from '../../services/collegue.service';
 })
 export class ListeColleguesComponent implements OnInit {
 
-  @Input() list:Collegue[] 
+  @Input() list:Array<Collegue>
   constructor(private pCollegue:CollegueService) { }
 
   ngOnInit() {
@@ -21,4 +21,6 @@ export class ListeColleguesComponent implements OnInit {
       collegues => this.list = collegues
     )
   }
+
+  
 }

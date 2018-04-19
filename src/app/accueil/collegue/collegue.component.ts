@@ -20,16 +20,6 @@ export class CollegueComponent implements OnInit {
   }
 
   scoreModif(event:Avis){
-    /*if(event == Avis.AIMER){
-      this.pCollegue.donnerUnAvis(this.collegue, event).then(
-        c => this.collegue.score = c.score
-      )
-    }
-    else if(event == Avis.DETESTER){
-      this.pCollegue.donnerUnAvis(this.collegue, event).then(
-        c => this.collegue.score = c.score
-      )
-    }*/
     this.pCollegue.donnerUnAvis(this.collegue, event).then(
       c => this.collegue.score = c.score
     )
