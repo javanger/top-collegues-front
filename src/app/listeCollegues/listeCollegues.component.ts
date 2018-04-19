@@ -8,6 +8,5 @@ import { Avis, Collegue } from "../models";
 })
 export class ListeColleguesComponent implements OnInit {
   @Input() collegues: Array<Collegue>;
-
-  ngOnInit() {}
+  ngOnInit() { }
 }

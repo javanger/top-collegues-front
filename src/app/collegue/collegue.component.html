@@ -9,7 +9,9 @@
     <h4 class="card-title">{{collegue.pseudo}}</h4>
     <!--Text-->
     <p class="card-text">+ {{collegue.score}}</p>
-    <app-avis (choix)="afficher($event)"></app-avis>
-    {{avis}}
+    <app-avis (choix)="updateScore($event)"></app-avis>
+    
   </div>
 </div>
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Avis, Collegue } from "../models";
+import { CollegueService } from '../services/collegue.service';
 
 @Component({
   selector: "app-demo",
@@ -10,23 +11,22 @@ export class DemoComponent implements OnInit {
   collegue: Collegue;
   collegues: Array<Collegue> = [];
 
-  constructor() {
-    this.collegue = new Collegue(
-      "paul",
-      45,
-      "http://1.bp.blogspot.com/-b66DQHFQuqs/UOl-mEpfyyI/AAAAAAAADds/VbLQxXMM464/s1600/les+simpson+homer+r%C3%A9plique+pinais+doh.jpeg"
-    );
+  constructor(private cServ: CollegueService) {
+    //this.collegues = null;
+    cServ.listerCollegues()
+      .then(data => {
+        //console.log(data);
+        data.map(d => new Collegue(d.name, d.score, d.urlImage)).forEach(c => {
+          this.collegues.push(c);
+        });
+        console.log(this.collegues);
+      });
 
-    for (let i = 0; i < 12; i++) {
-      this.collegues.push(
-        new Collegue(
-          "Kevin",
-          4521,
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Re-e364r9e3JXvsZuZG4MPwMFsKYT-tpEJ3yrKVevny9Vrq-Mw"
-        )
-      );
-    }
+    /*cServ.donnerUnAvis(new Collegue("Kevin", 10, ""), Avis.AIMER)
+      .then(data => {
+        console.log(data);
+      });*/
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

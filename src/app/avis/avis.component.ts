@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import {Avis} from "../models";
+import { Avis } from "../models";
+
 @Component({
   selector: 'app-avis',
   templateUrl: './avis.component.html',
@@ -7,17 +8,16 @@ import {Avis} from "../models";
 })
 export class AvisComponent implements OnInit {
 
-  @Output() choix:EventEmitter<string> = new EventEmitter<string>();
-  
+  @Output() choix: EventEmitter<Avis> = new EventEmitter<Avis>();
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   like() {
     this.choix.emit(Avis.AIMER);
   }
-  
+
   unlike() {
     this.choix.emit(Avis.DETESTER);
   }

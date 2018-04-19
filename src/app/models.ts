@@ -1,6 +1,6 @@
 export enum Avis {
-  AIMER = "J'aime",
-  DETESTER = "Je déteste"
+  AIMER,
+  DETESTER
 }
 
 export class Collegue {
@@ -9,4 +9,8 @@ export class Collegue {
     public score: number,
     public photo: string
   ) {}
+}
+
+export class Vote {
+  constructor(public collegue: Collegue, public avis: Avis) {}
 }
