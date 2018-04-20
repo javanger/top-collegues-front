@@ -17,7 +17,6 @@ export class AvisComponent {
   choixAimer(event) {
 
     this.avisEvent.emit(Avis.AIMER);
-
   }
 
   choixDetester(event) {
@@ -35,9 +34,9 @@ export class AvisComponent {
     }
   }
 
-  afficherDetester(): boolean {
+  afficherDetester() {
 
-    if (this.score >= -1000) {
+    if (this.score <= -1000) {
       return false;
     } else {
       return true;

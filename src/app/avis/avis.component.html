@@ -1,11 +1,11 @@
 <div class="row justify-content-center">
 
   <div *ngIf="afficherAimer()">
-    <button type="button" class="btn btn-green waves-light" mdbRippleRadius (click)="choixAimer($event)">J'aime</button>
+    <button class="btn btn-green waves-light" mdbRippleRadius (click)="choixAimer($event)">J'aime</button>
   </div>
 
   <div *ngIf="afficherDetester()">
-    <button type="button" class="btn btn-danger waves-light" mdbRippleRadius (click)="choixDetester($event)">Je déteste</button>
+    <button class="btn btn-danger waves-light" mdbRippleRadius (click)="choixDetester($event)">Je déteste</button>
   </div>
 
 </div>
