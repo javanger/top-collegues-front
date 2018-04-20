@@ -15,7 +15,9 @@ import { CreationComponent } from './demo/creation/creation.component';
 import { ModifierComponent } from './demo/modifier/modifier.component';
 import { DetailComponent } from './demo/detail/detail.component';
 import { PageNonTrouveeComponent } from './demo/page-non-trouvee/page-non-trouvee.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ScorePipe } from './pipes/score.pipe'
+import { FilterPipe } from './pipes/filter.pipe'
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent },
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
     CreationComponent,
     ModifierComponent,
     DetailComponent,
-    PageNonTrouveeComponent
+    PageNonTrouveeComponent,
+    ScorePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
