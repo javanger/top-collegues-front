@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Top3Component } from './top3/top3.component';
+import { NotePipe } from './note.pipe';
 
 const appRoutes: Routes = [
 
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     ListerColleguesComponent,
     MenuComponent,
     DetailsComponent,
-    Top3Component
+    Top3Component,
+    NotePipe
 
      ],
   imports: [
