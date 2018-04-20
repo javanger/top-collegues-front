@@ -1,8 +1,8 @@
 <div class="card" >
     <img class="card-img-top img-fluid" src="{{collegue.photo}}" alt="Card image cap">
     <div class="card-body">
-      <p class="card-text text-center"><a routerLink="/collegues/{{collegue.pseudo}}">{{collegue.pseudo}}</a></p>
-      <p class="card-text text-center">{{collegue.score}}</p>
+      <p class="card-text text-center"><a routerLink="/collegues/{{collegue.pseudo}}">{{(collegue.pseudo | uppercase)}}</a></p>
+      <p class="card-text text-center" [innerHTML]="collegue.score | score"></p>
       <avis (buttonEvent)="scoreModif($event)" [avisScore]="collegue.score"></avis>
     </div>
   </div>

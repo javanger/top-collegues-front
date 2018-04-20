@@ -16,6 +16,9 @@ export class CollegueDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,private pCollegue:CollegueService) { 
     this.pseudo = route.snapshot.paramMap.get("pseudo")    
     this.collegue = this.pCollegue.trouverCollegue(this.pseudo)
+    /*this.pCollegue.trouverCollegue(this.pseudo).then(
+      c => this.collegue = c
+    )*/
   }
 
   ngOnInit() {
@@ -29,5 +32,13 @@ export class CollegueDetailComponent implements OnInit {
     })
     
   }
+
+  /*scoreModif(event:Avis){
+    
+      this.pCollegue.donnerUnAvis(this.collegue, event).then(
+        c => this.collegue.score = c.score
+      )
+    
+  }*/
 
 }

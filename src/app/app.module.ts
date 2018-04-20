@@ -13,7 +13,9 @@ import { CollegueService } from './services/collegue.service';
 import { MenuComponent } from './shared/menu/menu.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Top3Component } from './pages/top3/top3.component';
-import { CollegueDetailComponent } from './pages/collegue-detail/collegue-detail.component'
+import { CollegueDetailComponent } from './pages/collegue-detail/collegue-detail.component';
+import { ScorePipe } from './pipes/score.pipe';
+import { FiltrePipe } from './pipes/filtre.pipe'
 
 const appRoutes: Routes = [
 
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
     ListeColleguesComponent,
     MenuComponent,
     Top3Component,
-    CollegueDetailComponent
+    CollegueDetailComponent,
+    ScorePipe,
+    FiltrePipe
   ],
   imports: [
     BrowserModule,

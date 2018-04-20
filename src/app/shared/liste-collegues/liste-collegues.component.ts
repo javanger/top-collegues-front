@@ -12,9 +12,14 @@ export class ListeColleguesComponent implements OnInit {
 
   @Input() list:Array<Collegue>
   @Input() mode:Mode
+  filtreSaisie:string;
   constructor(private pCollegue:CollegueService) { }
 
   ngOnInit() {
+  }
+
+  saisieEffectuee(s:string) {
+    this.filtreSaisie = s;
   }
 
   maj():void{
