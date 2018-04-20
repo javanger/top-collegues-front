@@ -7,7 +7,7 @@
   <div class="card-body">
     <div class="text-center">
       <h4 class="card-title">@{{ collegue.pseudo | uppercase }}</h4>
-      <p class="card-text">+ {{collegue.score | score }}</p>
+      <p class="card-text" [innerHTML]="collegue.score | score "></p>
     </div>
     <hr>
     <div class="row">
