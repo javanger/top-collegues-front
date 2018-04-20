@@ -16,6 +16,7 @@ import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Top3Component } from './top3/top3.component';
 import { NotePipe } from './note.pipe';
+import { PseudoPipe } from './pseudo.pipe';
 
 const appRoutes: Routes = [
 
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     MenuComponent,
     DetailsComponent,
     Top3Component,
-    NotePipe
+    NotePipe,
+    PseudoPipe
 
      ],
   imports: [

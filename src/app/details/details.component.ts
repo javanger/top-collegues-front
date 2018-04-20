@@ -21,6 +21,10 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {}
 
   ajoutAvis(event) {
-
+    this.cService
+      .donnerUnAvis(this.collegue, event)
+      .then(c => (this.collegue = c));
   }
-}
+    
+  }
+

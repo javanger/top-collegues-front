@@ -5,9 +5,11 @@
 
     <div class="card-body">
 
-      <strong><h4 class=" text-center">{{collegue.pseudo}}</h4></strong> 
+      <strong>
+        <h4 class=" text-center" >{{collegue.pseudo | uppercase}}</h4>
+      </strong>
 
-      <p class=" text-center">{{collegue.note}}</p>
+      <p class=" text-center" [innerHtml]="collegue.note | note "></p>
       <br/>
     </div>
   </div>
@@ -28,6 +30,8 @@
     <br/>
   </div>
 </div>
+<div class="row">
 <div class="col-3 offset-4">
   <app-avis [note]="collegue.note" (formEvent)="ajoutAvis($event)"></app-avis>
+</div>
 </div>
