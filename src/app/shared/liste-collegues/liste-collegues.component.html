@@ -1,8 +1,11 @@
 <div class ="row mt-2">
-    <div class="col-5">
+    <div class="col-lg-4 col-md-12">
         <button type="button" class="btn btn-amber" (click)="maj()"><i class="fa fa-refresh" aria-hidden="true"></i> Rafraichir la liste</button>
     </div>
-    <div class="col offset-1 mt-3">
+    <div class="col-lg-4 col-md-12">
+        <a routerLink="/collegues/nouveau"><button type="button" class="btn btn-amber">Ajouter un collègue</button></a>
+    </div>
+    <div class="col mt-3">
         <p>Filtrer par pseudo <input #saisie (keyup)="saisieEffectuee(saisie.value)"></p>
     </div>
 </div>

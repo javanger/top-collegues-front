@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <h2 class="text-center mt-4">Création d'un nouveau collegue</h2>
+    <form class="mt-5">
+      <div animated class="md-form">
+        <i class="fa fa-tag prefix grey-text"></i>
+        <input mdbActive mdbInputDirective type="text" [(ngModel)]="col.matricule" name="inputMatricule" id="inputMatricule" class="form-control" required minlength="2"  #matricule="ngModel">
+        <label for="inputMatricule" class="">Matricule</label>
+      </div>
+      <div animated class="md-form">
+        <i class="fa fa-user  prefix grey-text"></i>
+        <input mdbActive mdbInputDirective type="text" [(ngModel)]="col.pseudo" name="inputPseudo" id="inputPseudo" class="form-control" required #pseudo="ngModel">
+        <label for="inputPseudo" class="">Pseudo</label>
+      </div>
+      <div animated class="md-form">
+        <i class="fa fa-file-image-o prefix grey-text"></i>
+        <input mdbActive mdbInputDirective type="text" [(ngModel)]="col.url" name="inputUrl" id="inputUrl" class="form-control" #url="ngModel">
+        <label for="inputUrl" class="">URL image</label>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="recuperationForm()" [disabled]="!(matricule.valid&&pseudo.valid)">Créer</button>
+    </form>
+  </div>

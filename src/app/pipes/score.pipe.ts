@@ -8,7 +8,7 @@ export class ScorePipe implements PipeTransform {
   transform(value: number, args?: any): string {
     let score:string 
     if (value>0){
-      score = `<p class="teal-text score">+ ${value}</p>`
+      score = `<p class="teal-text score">+${value}</p>`
 
     }else if(value<0){
       score = `<p class="deep-orange-text score"> ${value}</p>`
