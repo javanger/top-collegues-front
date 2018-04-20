@@ -3,7 +3,9 @@ node_js:
   - "9"
 before_script:
   - npm install
-script: npm run build
+script:
+  - npm run build
+  - cp dist/index.html dist/404.html
 deploy:
   local-dir: dist
   provider: pages
