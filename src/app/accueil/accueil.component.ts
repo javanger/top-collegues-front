@@ -8,4 +8,8 @@ import { Avis, Collegue } from '../models';
 })
 export class AccueilComponent {
   
+constructor() {
+  
+}
+
 }
