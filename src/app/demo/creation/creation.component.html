@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <h2 class="text-center mt-4">Création d'un nouvel employé</h2>
+  <form class="mt-5">
+    <div animated class="md-form">
+      <i class="fa fa-tag  prefix grey-text"></i>
+      <input mdbActive mdbInputDirective type="text" name="inputPseudo" id="inputPseudo" class="form-control" #pseudo>
+      <label for="inputPseudo" class="">Pseudo</label>
+    </div>
+    <div animated class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+      <input mdbActive mdbInputDirective type="text" name="inputNom" id="inputNom" class="form-control"  #nom>
+      <label for="inputNom" class="">Nom</label>
+    </div>
+    <div animated class="md-form">
+      <i class="fa fa-user prefix grey-text"></i>
+      <input mdbActive mdbInputDirective type="text" name="inputPrenom" id="inputPrenom" class="form-control" #prenom>
+      <label for="inputPrenom" class="">Prenom</label>
+    </div>
+    <div animated class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input mdbActive mdbInputDirective type="text" name="inputEmail" id="inputEmail" class="form-control" #email>
+      <label for="inputEmail" class="">Email</label>
+    </div>
+    <div animated class="md-form">
+      <i class="fa fa-home prefix grey-text"></i>
+      <input mdbActive mdbInputDirective type="text" name="inputAdresse" id="inputAdresse" class="form-control" #adresse>
+      <label for="inputAdresse" class="">Adresse</label>
+    </div> 
+    <button type="submit" class="btn btn-primary" (click) ="RecuperationForm(pseudo.value, nom.value, prenom.value, email.value, adresse.value)">Créer</button>
+  </form>
+</div>
+
