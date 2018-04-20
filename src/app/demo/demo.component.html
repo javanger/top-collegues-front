@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h1>Page de démonstration des composants de l'application</h1>
+
+  <h2>Bandeau Component</h2>
+  <app-bandeau></app-bandeau>
+
+  <h2>Avis component</h2>
+  <app-avis (avis)="afficher($event)"></app-avis>
+  <div *ngIf="!isHidden">
+    {{avisExprime}}
+  </div>
+</div>
