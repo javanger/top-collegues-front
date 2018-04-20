@@ -57,9 +57,11 @@ export class ColleguesService {
       )
       .toPromise()
       .then((data: any) => {
+
         console.log(data);
 
         return data;
+        
       });
 
   }

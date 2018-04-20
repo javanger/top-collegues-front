@@ -13,21 +13,12 @@ export class CollegueComponent {
 
   @Input() collegue: Collegue;
 
-  constructor(private serviceCollegue : ColleguesService) { }
+  constructor(private serviceCollegue: ColleguesService) { }
 
   impactForm(avis: Avis) {
 
-    if(avis == Avis.AIMER) {
+    this.serviceCollegue.donnerUnAvis(this.collegue, avis)
+      .then(c => this.collegue.score = c.score);
 
-      this.collegue.score += 10;
-      this.serviceCollegue.donnerUnAvis(this.collegue, avis);
-      
-    } else {
-
-      this.collegue.score -= 5;
-      this.serviceCollegue.donnerUnAvis(this.collegue, avis);
-      
-    }
   }
-
 }

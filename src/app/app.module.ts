@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
-import { DemoComponent } from './demo/demo.component';
+import { AccueilComponent } from './accueil/accueil.component';
 import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
@@ -16,7 +16,7 @@ import { ColleguesService } from './services/collegue.service';
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
+    AccueilComponent,
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
