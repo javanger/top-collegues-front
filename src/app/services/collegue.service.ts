@@ -18,6 +18,22 @@ export class CollegueService {
     });
   }
 
+  top():Promise<Collegue[]> { 
+    return this._http.get(URL_BACKEND + "collegue/top")
+    .toPromise()
+    .then((data: any) => {
+      return data.map((d:any) => new Collegue(d))
+    });
+  }
+
+  flop():Promise<Collegue[]> { 
+    return this._http.get(URL_BACKEND + "collegue/flop")
+    .toPromise()
+    .then((data: any) => {
+      return data.map((d:any) => new Collegue(d))
+    });
+  }
+
   aVote(collegue:Collegue, avis:Avis):Promise<Collegue>{
     const httpOptions = {
       headers: new HttpHeaders({
@@ -37,6 +53,26 @@ export class CollegueService {
       )
       .toPromise()
       .then((data: any) => {
+        return data
+      })
+  }
+
+  detail(nom:String):Promise<Collegue>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+     };
+     return this._http.get(
+      // url d'accès au service
+      URL_BACKEND + "collegue/" + nom,
+
+      // options de la requête HTTP
+      httpOptions
+      )
+      .toPromise()
+      .then((data: any) => {
+        console.log(data)
         return data
       })
   }

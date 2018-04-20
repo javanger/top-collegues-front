@@ -3,11 +3,12 @@ import { Avis, Collegue } from '../models';
 import { CollegueService } from '../services/collegue.service';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  selector: 'app-top',
+  templateUrl: './top.component.html',
+  styleUrls: ['./top.component.scss']
 })
-export class DemoComponent implements OnInit {
+export class TopComponent implements OnInit {
+
   text:string = '';
   collegueFictif: Collegue;
   listeColleguesFictifs:Array<Collegue> = new Array()
@@ -15,20 +16,22 @@ export class DemoComponent implements OnInit {
   constructor(private cService:CollegueService) { }
 
   ngOnInit() {
-    this.list()
+    this.top()
   }
 
-  list() {
-    this.cService.list().then(
+  top() {
+    this.cService.top().then(
       data => {
         this.listeColleguesFictifs = data
         this.listeColleguesFictifs.sort((a, b) => {
-          return a.nom.localeCompare(b.nom); 
+          return b.score - a.score; 
         });
       } 
     )
   }
+  
   changerAvis(avis:Avis) {
     this.text =  'Vous avez cliquer sur ' + avis;
   }
 }
+

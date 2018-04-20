@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-3">
-        <button type="button" class="btn btn-outline-primary" mdbWavesEffect>Rafraichir le liste</button>
+        <button type="button" (click)="trier()" class="btn btn-outline-primary" mdbWavesEffect>Trier le liste</button>
     </div>
 </div>
 <div class="row">
     <div *ngFor="let coll of listeCollegues" class="col-3 p-2">
-        <app-collegue  [collegue]="coll"></app-collegue>
+        <app-collegue (newCollegue) ="aChanger($event)"   [collegue]="coll"></app-collegue>
     </div>
 </div>
 

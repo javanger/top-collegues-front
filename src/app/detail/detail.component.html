@@ -1,0 +1,14 @@
+<div class="col-12 col-md-4 offset-md-4">
+  <!--Card-->
+  <div class="card card-cascade wider">
+    <img class="card-img-top" src="{{collegue.photo}}" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text text-center">{{collegue.nom}}</p>
+        <p class="card-text text-center">{{collegue.score}}</p>
+        <p class="card-text text-center">{{collegue.email}}</p>
+        <p class="card-text text-center">{{collegue.pays}}</p>
+        <app-avis (avis) ="aVote($event)" [aimeAtif]="isAimerActif()" [detesteAtif]="isDetesterActif()"></app-avis>
+    </div>
+  </div>
+</div>
+

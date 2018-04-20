@@ -8,12 +8,31 @@ import { Collegue } from '../models';
 })
 export class ListeColleguesComponent implements OnInit {
 
-  @Input() listeCollegues:Array<Collegue> = new Array() ;
+  @Input() listeCollegues:Array<Collegue> = new Array();
 
-  constructor() { 
+  constructor() { }
+
+  ngOnInit() { 
   }
 
-  ngOnInit() {
+  trier(){
+    this.listeCollegues = this.listeCollegues.sort((a, b) => {
+      let order =  b.score - a.score; 
+      if(order === 0) {
+        order = a.nom.localeCompare(b.nom);
+      }
+      return order
+    });
   }
 
+  aChanger(newCollegue:Collegue){
+    this.listeCollegues = this.listeCollegues.map(c => {
+      if(c.nom === newCollegue.nom) {
+        return newCollegue;
+      }
+      else{
+        return c;
+      }
+    });
+  }
 }

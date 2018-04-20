@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Collegue, Avis } from '../models';
 import { CollegueService } from '../services/collegue.service';
 
@@ -10,20 +10,18 @@ import { CollegueService } from '../services/collegue.service';
 export class CollegueComponent implements OnInit {
   
 @Input() collegue:Collegue;
+@Output() newCollegue = new EventEmitter<Collegue>();
   
 
   constructor(private cService:CollegueService) { }
 
   ngOnInit() {
   }
-
-  changerScore(avis:Avis) {
-    this.collegue.score = avis === Avis.AIMER ? this.collegue.score + 10 : this.collegue.score - 10;
-  }
   
   aVote(avis:Avis) {
     this.cService.aVote(this.collegue, avis).then(data =>{
       this.collegue = data;
+      this.newCollegue.emit(this.collegue);
     })
   }
 
