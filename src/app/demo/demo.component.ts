@@ -10,16 +10,17 @@ import { Router } from "@angular/router";
 })
 export class DemoComponent implements OnInit {
   collegue: Collegue;
-  collegues: Array<Collegue> = [];
+  collegues: Promise<Array<Collegue>>;
+  keyword: string;
 
   constructor(private cServ: CollegueService) {
-    cServ.listerCollegues()
-      .then(data => {
-        data.map(d => new Collegue(d.pseudo, d.score, d.urlImage)).forEach(c => {
-          this.collegues.push(c);
-        });
-      });
+    this.collegues = cServ.listerCollegues()
+      .then(data => data.map(d => new Collegue(d.pseudo, d.score, d.urlImage)));
   }
 
   ngOnInit() { }
+
+  filtrer(event: any) {
+    this.keyword = event.srcElement.value;
+  }
 }

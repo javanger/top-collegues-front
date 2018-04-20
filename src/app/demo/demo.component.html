@@ -1,3 +1,4 @@
-<app-listeCollegues [collegues]="collegues">
+<app-search-bar (keyup)="filtrer($event)"></app-search-bar>
+<app-listeCollegues [collegues]="collegues | async | filter:keyword">
 </app-listeCollegues>
 <h1>Historique des avis</h1>

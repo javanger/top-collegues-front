@@ -6,8 +6,8 @@
 
   <div class="card-body">
     <div class="text-center">
-      <h4 class="card-title">@{{ collegue.pseudo }}</h4>
-      <p class="card-text">+ {{collegue.score}}</p>
+      <h4 class="card-title">@{{ collegue.pseudo | uppercase }}</h4>
+      <p class="card-text">+ {{collegue.score | score }}</p>
     </div>
     <hr>
     <div class="row">

@@ -18,6 +18,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from "@angular/router";
 import { DetailsCollegueComponent } from './details-collegue/details-collegue.component';
+import { ScorePipe } from './pipes/score.pipe';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
 
@@ -42,7 +45,10 @@ const appRoutes: Routes = [
     MenuComponent,
     HomeComponent,
     Page404Component,
-    DetailsCollegueComponent
+    DetailsCollegueComponent,
+    ScorePipe,
+    SearchBarComponent,
+    FilterPipe
   ],
   imports: [BrowserModule, MDBBootstrapModule.forRoot(), HttpClientModule, RouterModule.forRoot(appRoutes)],
   providers: [CollegueService],

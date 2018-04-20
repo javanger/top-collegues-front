@@ -15,7 +15,6 @@ export class DetailsCollegueComponent extends CollegueComponent  {
   constructor(private route: ActivatedRoute, protected cServ: CollegueService, protected router: Router) {
     super(cServ, router);
 
-    console.log("speudo : " + route.snapshot.paramMap.get("pseudo"));
     let col = cServ.getCollegue(route.snapshot.paramMap.get("pseudo")).then(data => {
       this.collegue = new Collegue(data['lightCollegue'].pseudo, data['lightCollegue'].score, data['lightCollegue'].urlImage, data.name, data.prenom, data.email, data.adresse);
     });

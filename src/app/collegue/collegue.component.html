@@ -9,11 +9,11 @@
   <div class="card-body">
     <!--Name-->
     <a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active">
-      <h4 class="card-title">@{{ collegue.pseudo }}</h4>
+      <h4 class="card-title">@{{ collegue.pseudo | uppercase }}</h4>
     </a>
     <hr>
     <!--Quotation-->
-    <p class="card-text">+ {{collegue.score}}</p>
+    <span [innerHTML]="collegue.score | score "></span>
     <app-avis (choix)="updateScore($event)"></app-avis>
   </div>
 
