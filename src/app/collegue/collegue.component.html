@@ -1,21 +1,21 @@
 <!--Card-->
 <div class="card testimonial-card text-center">
   <br>
-  <a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active">
-    <!--Avatar-->
-    <div class="avatar mx-auto">
-      <img src="{{ collegue.urlImage }}" class="rounded-circle">
-    </div>
+  <!--Avatar-->
+  <div class="avatar mx-auto">
+    <img src="{{ collegue.urlImage }}" class="rounded-circle">
+  </div>
 
-    <div class="card-body">
-      <!--Name-->
+  <div class="card-body">
+    <!--Name-->
+    <a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active">
       <h4 class="card-title">@{{ collegue.pseudo }}</h4>
-      <hr>
-      <!--Quotation-->
-      <p class="card-text">+ {{collegue.score}}</p>
-      <app-avis (choix)="updateScore($event)"></app-avis>
-    </div>
-  </a>
+    </a>
+    <hr>
+    <!--Quotation-->
+    <p class="card-text">+ {{collegue.score}}</p>
+    <app-avis (choix)="updateScore($event)"></app-avis>
+  </div>
 
 </div>
 <!--/.Card-->
