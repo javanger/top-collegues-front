@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CollegueService } from '../../services/collegue.service';
-import { Collegue } from '../../models';
+import { Collegue, Avis } from '../../models';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -33,4 +33,27 @@ pseudo: string;
   } 
 
   @Input() colleguedetail:Collegue;
+
+  score(event:Avis){
+    if(event === Avis.AIMER){
+      this._collegue.donnerUnAvis(this.colleguedetail, event).then((data: Collegue) => {  
+      this.colleguedetail = data
+    },(error: HttpErrorResponse) => {
+      alert("Une erreur lors de la modification du score de : " +this.colleguedetail.pseudo)
+      console.log("error : ", error);
+    });
+      Object.assign(this.colleguedetail, { score : this.colleguedetail.score += 10});
+    }
+    else if(event === Avis.DETESTER){
+      this._collegue.donnerUnAvis(this.colleguedetail, event).then((data: Collegue) => {  
+        console.log("Collegue : " + data);        
+      },(error: HttpErrorResponse) => {
+        alert("Une erreur lors de la modification du score de : " +this.colleguedetail.pseudo)
+        console.log("error : ", error);
+      });
+      Object.assign(this.colleguedetail, { score : this.colleguedetail.score -= 5});
+    }
+  }
+
+  @Output() detail:EventEmitter<String> = new EventEmitter<String>();
 }
