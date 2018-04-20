@@ -7,5 +7,5 @@ export const environment = {
   production: false,
 
   // ajout d'une URL backend en mode déploiement
-  backendUrl: 'https://echene-top-collegues.herokuapp.com'
+  backendUrl: 'http://localhost:8080'
 };
