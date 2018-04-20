@@ -21,12 +21,11 @@ export class CollegueService {
       .toPromise()
       .then(
         (data: any) => {
-          return data.map(c => new Collegue(c.photo, c.nom, c.note));
+          return data.map(c => new Collegue(c.photo, c.pseudo, c.note, c.nom, c.prenom, c.email, c.adresse));
         },
         (error: any) => {}
       );
      }
-
   donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
     //  Aimer ou Détester un collègue côté serveur
     const httpOptions = {
@@ -36,13 +35,21 @@ export class CollegueService {
     };
     return this._http
       .patch(
-        URL_BACKEND + "collegues/" + unCollegue.nom,
-        {   action: avis  },
+        URL_BACKEND + "collegues/" + unCollegue.pseudo,
+         {   action: avis  },
         httpOptions
       )
       .toPromise()
       .then((data: any) => {
         return data;
       });
+  }
+
+  trouverCollegue(pseudo:string):Promise<Collegue>{
+    return this._http.get(URL_BACKEND + "collegues/" + pseudo)
+    .toPromise()
+    .then((c: any) => {
+       return new Collegue(c.photo, c.pseudo, c.note, c.nom, c.prenom, c.email, c.adresse)
+    });
   }
 }

@@ -6,7 +6,7 @@
     <!--Card content-->
     <div class="card-body">
       <!--Title-->
-      <h4 class="card-title text-center">{{collegue.pseudo}}</h4>
+      <h4 class="card-title text-center"><a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active-link">{{collegue.pseudo}}</a></h4>
       <!--Text-->
       <p class="card-text text-center">{{collegue.note}}</p>
       <br/>
@@ -16,4 +16,4 @@
     </div>
 
   </div>
-
+  

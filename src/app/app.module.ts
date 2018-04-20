@@ -11,6 +11,19 @@ import { CollegueComponent } from './collegue/collegue.component';
 import { ListerColleguesComponent } from './lister-collegues/lister-collegues.component';
 import { CollegueService } from './services/collegue.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+import { DetailsComponent } from './details/details.component';
+import { RouterModule, Routes } from '@angular/router';
+import { Top3Component } from './top3/top3.component';
+
+const appRoutes: Routes = [
+
+  { path: 'accueil', component: DemoComponent }, // /page1 affiche le composant A
+  { path: 'top3', component: Top3Component }, // /page2 affiche le composant B
+  { path: 'collegues/:pseudo', component: DetailsComponent },
+  
+  { path: '',   redirectTo: '/top3', pathMatch: 'full' }, // redirige vers la route page1 par défaut
+];
 
 @NgModule({
   declarations: [
@@ -19,12 +32,17 @@ import { HttpClientModule } from '@angular/common/http';
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
-    ListerColleguesComponent
+    ListerColleguesComponent,
+    MenuComponent,
+    DetailsComponent,
+    Top3Component
+
      ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [CollegueService],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+
+  <div class="col-3 mt-5">
+    <img class="img-fluid" src="{{collegue.photo}}">
+
+    <div class="card-body">
+
+      <strong><h4 class=" text-center">{{collegue.pseudo}}</h4></strong> 
+
+      <p class=" text-center">{{collegue.note}}</p>
+      <br/>
+    </div>
+  </div>
+</div>
+<div class="row ">
+  <div class="col-5 offset-5">
+    <strong>Nom : </strong>{{collegue.nom}}
+    <br/>
+    <br/>
+    <strong>Prénom : </strong>{{collegue.prenom}}
+    <br/>
+    <br/>
+    <strong>Email : </strong>{{collegue.email}}
+    <br/>
+    <br/>
+    <strong>Adresse : </strong>{{collegue.adresse}}
+    <br/>
+    <br/>
+  </div>
+</div>
+<div class="col-3 offset-4">
+  <app-avis [note]="collegue.note" (formEvent)="ajoutAvis($event)"></app-avis>
+</div>
