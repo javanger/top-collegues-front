@@ -6,10 +6,10 @@ import { Collegue } from '../models';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value:Array<Collegue>, inputRecherche):Array<Collegue>{
-    if(!inputRecherche){
+  transform(value:Array<Collegue>, recherche:string):Array<Collegue>{
+    if(!recherche){
         return value;
     }         
-    return value.filter( v => {return v.pseudo.toLowerCase().includes(inputRecherche.toLowerCase())})
+    return value.filter( v => {return v.pseudo.toLowerCase().includes(recherche.toLowerCase())})
   }
 }
