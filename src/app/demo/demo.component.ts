@@ -15,7 +15,7 @@ export class DemoComponent implements OnInit {
   constructor(private cServ: CollegueService) {
     cServ.listerCollegues()
       .then(data => {
-        data.map(d => new Collegue(d.name, d.score, d.urlImage)).forEach(c => {
+        data.map(d => new Collegue(d.pseudo, d.score, d.urlImage)).forEach(c => {
           this.collegues.push(c);
         });
       });

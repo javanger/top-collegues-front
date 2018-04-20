@@ -22,14 +22,11 @@ import { DetailsCollegueComponent } from './details-collegue/details-collegue.co
 const appRoutes: Routes = [
 
   { path: 'accueil', component: HomeComponent }, // /page1 affiche le composant A
-
   { path: 'demo', component: DemoComponent }, // /page2 affiche le composant B
-
+  { path: 'collegues/:pseudo', component: DetailsCollegueComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // redirige vers la route page1 par défaut
+  { path: '**', component: Page404Component } // page non trouvée
 
-  { path: '**', component: Page404Component }, // page non trouvée
-
-  { path: 'collegues/:name', component: DetailsCollegueComponent }
 ];
 
 

@@ -13,21 +13,16 @@ export class CollegueComponent implements OnInit {
   avis: string;
   @Output() details: EventEmitter<Collegue> = new EventEmitter<Collegue>();
 
-  constructor(private _cServ: CollegueService, private router: Router) { }
+  constructor(protected _cServ: CollegueService, protected router: Router) { }
   ngOnInit() { }
 
-  updateScore(avis: Avis) {
+ updateScore(avis: Avis) {
     this._cServ.donnerUnAvis(this.collegue, avis)
       .then(data => {
         this.collegue.urlImage = data.urlImage;
-        this.collegue.name = data.name;
+        this.collegue.pseudo = data.pseudo;
         this.collegue.score = data.score;
       });
-  }
-
-  
-  afficherDetails(collegue: Collegue) {
-    this.router.navigate(['/collegues/', {name: collegue.name}]);
   }
 
 }

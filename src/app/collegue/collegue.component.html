@@ -1,13 +1,21 @@
-<div class="card">
+<!--Card-->
+<div class="card testimonial-card text-center">
+  <br>
+  <a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active">
+    <!--Avatar-->
+    <div class="avatar mx-auto">
+      <img src="{{ collegue.urlImage }}" class="rounded-circle">
+    </div>
 
-  <!--Card image-->
-  <img class="img-fluid" src="{{collegue.urlImage}}" alt="Card image cap">
+    <div class="card-body">
+      <!--Name-->
+      <h4 class="card-title">@{{ collegue.pseudo }}</h4>
+      <hr>
+      <!--Quotation-->
+      <p class="card-text">+ {{collegue.score}}</p>
+      <app-avis (choix)="updateScore($event)"></app-avis>
+    </div>
+  </a>
 
-  <!--Card content-->
-  <div class="card-body">
-    <h4 class="card-title">{{collegue.name}}</h4>
-    <p class="card-text">+ {{collegue.score}}</p>
-    <app-avis (choix)="updateScore($event)"></app-avis>
-    <a (click)="afficherDetails(collegue)" routerLink="#" class="nav-item nav-link waves-light" routerLinkActive="active">Voir le profil</a>
-  </div>
 </div>
+<!--/.Card-->

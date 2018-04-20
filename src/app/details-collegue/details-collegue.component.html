@@ -1,3 +1,34 @@
-<p>
-  details-collegue works!
-</p>
+<div class="card testimonial-card mt-5 col-lg-4 offset-lg-4">
+  <br>
+  <div class="avatar mx-auto text-center">
+    <img src="{{ collegue.urlImage }}" class="rounded-circle">
+  </div>
+
+  <div class="card-body">
+    <div class="text-center">
+      <h4 class="card-title">@{{ collegue.pseudo }}</h4>
+      <p class="card-text">+ {{collegue.score}}</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div class=" col-lg-4">Nom:</div>
+      <div class="col">{{collegue.prenom}} {{collegue.name}}</div>
+    </div>
+    <div class="row">
+      <div class=" col-lg-4">Email:</div>
+      <div class="col">{{collegue.email}}</div>
+    </div>
+
+    <div class="row">
+      <div class=" col-lg-4">Adresse:</div>
+      <div class="col">{{collegue.adresse}}</div>
+    </div>
+
+    <div class="text-center mt-3">
+      <app-avis (choix)="updateScore($event)"></app-avis>
+    </div>
+  </div>
+
+
+</div>
+<!--/.Card-->

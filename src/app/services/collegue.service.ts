@@ -26,7 +26,7 @@ export class CollegueService {
 
   donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
     return new Promise((done, left) => {
-      const URL_API = environment.backendUrl + "/collegues/" + unCollegue.name
+      const URL_API = environment.backendUrl + "/collegues/" + unCollegue.pseudo
       this._http.patch(URL_API, { "action": avis })
         .toPromise()
         .then((data: any) => {
@@ -38,9 +38,9 @@ export class CollegueService {
     });
   }
 
-  getCollegue(col: Collegue) : Promise<Collegue> {
+  getCollegue(pseudo: string): Promise<Collegue> {
     return new Promise((done, left) => {
-      const URL_API = environment.backendUrl + "/collegues/" + col.name
+      const URL_API = environment.backendUrl + "/collegues/" + pseudo
       this._http.get(URL_API)
         .toPromise()
         .then((data: any) => {
