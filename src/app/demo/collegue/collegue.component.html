@@ -1,11 +1,10 @@
-
-  <div class="card">
-    <img class="card-img-top mx-auto d-block" src={{collegue.photo}} alt="Card image cap">
-    <div class="card-body">
-      <!--Title-->
-      <h4 class="card-title text-center">{{collegue.pseudo}}</h4>
-      <p class="card-text text-center">{{collegue.score}}</p>
-      <!--Text-->
-      <app-avis [score]="collegue.score" (avis)="score($event)"></app-avis>
-    </div>
-  </div>     
+<div class="card mdb-color">
+  <img class="card-img-top mx-auto d-block" src={{collegue.photo}} alt="Card image cap">
+  <div class="card-body">
+    <!--Title-->
+    <a routerLink="/collegues/{{collegue.pseudo}}"><h2 class="font-weight-bold cyan-text text-center">{{collegue.pseudo}}</h2></a>
+    <p class="white-text text-center">{{collegue.score}}</p>
+    <!--Text-->
+    <app-avis [score]="collegue.score" (avis)="score($event)"></app-avis>
+  </div>
+</div>     

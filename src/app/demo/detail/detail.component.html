@@ -1,0 +1,15 @@
+<img class="mx-auto d-block mt-5" src={{colleguedetail?.photo}}>
+<div class="card mdb-color mx-auto d-block  mt-5" style="width: 50rem;">
+  <div class="card-body">
+    <!--Title-->
+    <h2 class="font-weight-bold cyan-text text-center">{{colleguedetail?.pseudo}}</h2>
+    <p class="white-text text-center">{{colleguedetail?.score}}</p>
+    <!--Text-->
+    <p class="white-text">Nom : {{colleguedetail?.nom}}</p>
+    <p class="white-text">Prenom : {{colleguedetail?.prenom}}</p>
+    <p class="white-text">Email : {{colleguedetail?.email}}</p>
+    <p class="white-text">Adresse : {{colleguedetail?.adresse}}</p>
+
+    <app-avis [score]="colleguedetail?.score" (avis)="score($event)"></app-avis>
+  </div>
+</div>     

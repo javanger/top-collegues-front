@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from "@angular/common/http";
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Avis, Collegue } from '../../models';
 import { CollegueService } from '../../services/collegue.service';
 
@@ -27,7 +27,7 @@ export class CollegueComponent implements OnInit {
     }
     else if(event === Avis.DETESTER){
       this._collegue.donnerUnAvis(this.collegue, event).then((data: Collegue) => {  
-        this.collegue = data
+        console.log("Collegue : " + data);        
       },(error: HttpErrorResponse) => {
         alert("Une erreur lors de la modification du score de : " +this.collegue.pseudo)
         console.log("error : ", error);
@@ -37,4 +37,6 @@ export class CollegueComponent implements OnInit {
   }
 
   @Input() collegue:Collegue;
+
+  @Output() detail:EventEmitter<String> = new EventEmitter<String>();
 }

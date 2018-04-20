@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Avis } from '../models';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  selector: 'app-accueil',
+  templateUrl: './accueil.component.html',
+  styleUrls: ['./accueil.component.scss']
 })
-export class DemoComponent implements OnInit {
+export class AccueilComponent implements OnInit {
+
+  constructor(private router: Router) {    
+  }
 
   ngOnInit(): void {
   }
@@ -20,5 +24,11 @@ export class DemoComponent implements OnInit {
     } else {
       this.avisExprime = "Vous avez cliqué sur "+event.toString()      
     }
+  }
+
+  changerDePage() {
+
+    // Navigation vers une page
+    this.router.navigate(['/acceuil'])
   }
 }
