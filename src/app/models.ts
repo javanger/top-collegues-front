@@ -9,6 +9,8 @@ export class Collegue {
     prenom: string;
     score: number;
     urlImage: string;
+    adresse: string;
+    email: string;
 
     constructor(obj: any) {
         Object.assign(this, obj);
