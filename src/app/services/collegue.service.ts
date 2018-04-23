@@ -41,16 +41,12 @@ export class CollegueService {
     })
   }
 
-  ajouterCollegue(nouveauCollegue:Collegue):Promise<Collegue> {
-    console.log(nouveauCollegue);
-    
+  ajouterCollegue(matricule:string, pseudo:string, image:string):Promise<any> {    
     return this._http.put(URL_BACKEND +"/collegues/creation",
                            {
-                             pseudo : nouveauCollegue.pseudo,
-                             nom : nouveauCollegue.nom,
-                             prenom : nouveauCollegue.prenom,
-                             email : nouveauCollegue.email,
-                             adresse : nouveauCollegue.adresse
+                             matricule : matricule,
+                             pseudo : pseudo,
+                             image : image,
                            },
                            httpOptions)
     .toPromise()

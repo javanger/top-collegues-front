@@ -45,9 +45,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule.forRoot()
-    
-    
+    MDBBootstrapModule.forRoot() 
   ],
   providers: [
     CollegueService
