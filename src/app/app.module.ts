@@ -7,6 +7,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { CollegueService } from './services/collegue.service';
+import { VoteService } from './services/vote.service';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { CollegueDetailComponent } from './pages/collegue-detail/collegue-detail.component';
 import { Top3Component } from './pages/top3/top3.component';
@@ -16,8 +17,11 @@ import { CollegueComponent } from './shared/collegue/collegue.component';
 import { ListeColleguesComponent } from './shared/liste-collegues/liste-collegues.component';
 import { AjouterUnCollegueComponent } from './shared/ajouter-un-collegue/ajouter-un-collegue.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { VotreDernierAvisComponent } from './shared/votre-dernier-avis/votre-dernier-avis.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { FiltrePipe } from './pipes/filtre.pipe';
+import { HistoriqueVoteComponent } from './shared/historique-vote/historique-vote.component';
+import { VoteComponent } from './shared/vote/vote.component';
 
 
 const appRoutes: Routes = [
@@ -46,7 +50,10 @@ const appRoutes: Routes = [
     CollegueDetailComponent,
     ScorePipe,
     FiltrePipe,
-    AjouterUnCollegueComponent
+    AjouterUnCollegueComponent,
+    VotreDernierAvisComponent,
+    HistoriqueVoteComponent,
+    VoteComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [CollegueService],
+  providers: [CollegueService, VoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

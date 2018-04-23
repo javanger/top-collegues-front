@@ -3,6 +3,8 @@ import { Collegue, Avis} from "../../model"
 import { BandeauComponent } from '../bandeau/bandeau.component';
 import { AvisComponent} from '../avis/avis.component';
 import { CollegueService } from '../../services/collegue.service';
+import { VoteService } from '../../services/vote.service';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'collegue',
@@ -12,7 +14,7 @@ import { CollegueService } from '../../services/collegue.service';
 export class CollegueComponent implements OnInit {
 
   @Input() collegue:Collegue ;
-  constructor(private pCollegue:CollegueService) { 
+  constructor(private pCollegue:CollegueService, private pVote:VoteService) { 
 
   }
 
@@ -20,9 +22,11 @@ export class CollegueComponent implements OnInit {
   }
 
   scoreModif(event:Avis){
-    this.pCollegue.donnerUnAvis(this.collegue, event).then(
-      c => this.collegue.score = c.score
+    this.pCollegue.donnerUnAvis(this.collegue, event).subscribe(
+      c => 
+      this.collegue.score = c.score
     )
+    
   }
 
 }

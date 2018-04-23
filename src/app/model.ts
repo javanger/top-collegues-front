@@ -8,6 +8,29 @@ export enum Mode {
     TOP3,
 }
 
+export class Vote{
+    collegue:Collegue
+    avis:Avis
+    score:number
+    constructor(collegue:Collegue, avis:Avis, score:number){
+        this.avis=avis
+        this.collegue = collegue
+        this.score = score
+    }
+
+    get Collegue(){
+        return this.collegue
+    }
+
+    get Avis(){
+        return this.avis
+    }
+    get Score(){
+        return this.score
+    }
+
+}
+
 export class Collegue{
     pseudo:string
     score:number

@@ -21,7 +21,7 @@ export class AccueilComponent implements OnInit {
 
   list() {
     // utilisation du service
-    this.pCollegue.listerCollegues().then(
+    this.pCollegue.listerCollegues().subscribe(
       c => this.listeCollegue = c
     )
   }

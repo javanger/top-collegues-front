@@ -24,11 +24,11 @@ export class ListeColleguesComponent implements OnInit {
 
   maj():void{
     if (this.mode === Mode.DEFAULT){
-      this.pCollegue.listerCollegues().then(
+      this.pCollegue.listerCollegues().subscribe(
         collegues => this.list = collegues
       )}
     else if(this.mode === Mode.TOP3){
-      this.pCollegue.listerCollegues().then(collegues => {
+      this.pCollegue.listerCollegues().subscribe(collegues => {
         let temp:Array<Collegue> = []
         temp.push(collegues[0])
         temp.push(collegues[1])

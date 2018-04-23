@@ -23,9 +23,8 @@ export class Top3Component implements OnInit {
 
   list() {
     // utilisation du service
-    this.pCollegue.listerCollegues().then(
-      c => this.listeCollegue = c
-    ).then(() => {
+    this.pCollegue.listerCollegues().subscribe(c => {
+      this.listeCollegue = c
       this.top3 = []
       this.top3.push(this.listeCollegue[0])
       this.top3.push(this.listeCollegue[1])

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CollegueService } from '../../services/collegue.service';
 import { Collegue, Avis } from '../../model';
 import { AvisComponent} from '../../shared/avis/avis.component';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'collegue-detail',
@@ -12,7 +13,7 @@ import { AvisComponent} from '../../shared/avis/avis.component';
 export class CollegueDetailComponent implements OnInit {
 
   pseudo:string
-  collegue:Promise<Collegue>
+  collegue:Observable<Collegue>
   constructor(private route: ActivatedRoute,private pCollegue:CollegueService) { 
     this.pseudo = route.snapshot.paramMap.get("pseudo")    
     this.collegue = this.pCollegue.trouverCollegue(this.pseudo)
@@ -22,12 +23,10 @@ export class CollegueDetailComponent implements OnInit {
   }
 
   scoreModif(event:Avis){
-    this.collegue.then(col => {
-      this.pCollegue.donnerUnAvis(col, event).then(
+    this.collegue.subscribe(col =>
+      this.pCollegue.donnerUnAvis(col, event).subscribe(
         c => col.score = c.score
-      )
-    })
-    
+      ))    
   }
 
 }
