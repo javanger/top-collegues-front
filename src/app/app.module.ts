@@ -21,10 +21,14 @@ import { DetailsCollegueComponent } from './details-collegue/details-collegue.co
 import { ScorePipe } from './pipes/score.pipe';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AjouterUnCollegueComponentComponent } from './ajouter-un-collegue-component/ajouter-un-collegue-component.component';
+import { FormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
 
+  { path: 'collegues/add', component: AjouterUnCollegueComponentComponent }, 
   { path: 'accueil', component: HomeComponent }, // /page1 affiche le composant A
+  { path: 'demo', component: DemoComponent }, // /page2 affiche le composant B
   { path: 'demo', component: DemoComponent }, // /page2 affiche le composant B
   { path: 'collegues/:pseudo', component: DetailsCollegueComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // redirige vers la route page1 par défaut
@@ -48,9 +52,10 @@ const appRoutes: Routes = [
     DetailsCollegueComponent,
     ScorePipe,
     SearchBarComponent,
-    FilterPipe
+    FilterPipe,
+    AjouterUnCollegueComponentComponent
   ],
-  imports: [BrowserModule, MDBBootstrapModule.forRoot(), HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, MDBBootstrapModule.forRoot(), HttpClientModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [CollegueService],
   bootstrap: [AppComponent]
 })

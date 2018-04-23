@@ -3,7 +3,6 @@ import { Collegue, Avis } from "../models";
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-
 @Injectable()
 export class CollegueService {
   constructor(private _http: HttpClient) {
@@ -18,7 +17,6 @@ export class CollegueService {
         .then((data: any) => {
           done(data);
         }, (error: any) => {
-          // cas erreur
           left(error);
         });
     });
@@ -32,7 +30,6 @@ export class CollegueService {
         .then((data: any) => {
           done(data);
         }, (error: any) => {
-          // cas erreur
           left(error);
         });
     });
@@ -46,7 +43,19 @@ export class CollegueService {
         .then((data: any) => {
           done(data);
         }, (error: any) => {
-          // cas erreur
+          left(error);
+        });
+    });
+  }
+
+  ajouterCollegue(data): Promise<Collegue> {
+    return new Promise((done, left) => {
+      const URL_API = environment.backendUrl + "/collegues/nouveau";
+      this._http.post(URL_API, data)
+        .toPromise()
+        .then((data: any) => {
+          done(data);
+        }, (error: any) => {
           left(error);
         });
     });

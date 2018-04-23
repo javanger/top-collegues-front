@@ -14,6 +14,7 @@ export class Collegue {
     public email?: string,
     public adresse?: string
   ) { }
+
 }
 
 export class Vote {

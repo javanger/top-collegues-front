@@ -1,0 +1,30 @@
+<br>
+<br>
+<!-- Register form -->
+<form (ngSubmit)="submit(addCollegueForm.value)" #addCollegueForm="ngForm">
+  <p class="h5 text-center mb-4">Ajouter un collègue</p>
+
+  <div class="md-form">
+    <label>Quel est sont matricule ?</label>
+    <input [(ngModel)]="matricule" name="matricule" #matriculeField="ngModel" type="text" class="form-control" mdbInputDirective
+      mdbActive required>
+  </div>
+  <div class="md-form">
+    <label>Quel est sont pseudo ?</label>
+    <input [(ngModel)]="collegue.pseudo" name="pseudo" #pseudo="ngModel" type="text" class="form-control" mdbInputDirective mdbActive
+      minlength="2" required>
+  </div>
+
+  <div class="md-form">
+    <label>Quel est l'url de son avatar ?</label>
+    <input [(ngModel)]="collegue.urlImage" name="urlImage" #urlImage="ngModel" type="text" class="form-control" mdbInputDirective
+      mdbActive>
+  </div>
+
+  <div class="text-center">
+    <input class="btn btn-deep-orange waves-light" value="Enregistrer" type="submit" mdbWavesEffect [disabled]="!(matriculeField.valid && pseudo.valid && urlImage.valid)">
+  </div>
+</form>
+<!-- Register form -->
+
+<p>{{ message }}</p>
