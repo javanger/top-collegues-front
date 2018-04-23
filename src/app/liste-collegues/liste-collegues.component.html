@@ -3,8 +3,12 @@
         <button type="button" (click)="trier()" class="btn btn-outline-primary" mdbWavesEffect>Trier le liste</button>
     </div>
 </div>
+<div animated class="md-form justify-content-end mt-2">
+    <input mdbActive mdbInputDirective type="text" (keyup)="mySaisie(saisieInput.value)" #saisieInput class="form-control">
+    <label for="inputRecherche" class="">Filtrer par nom</label>
+</div>
 <div class="row">
-    <div *ngFor="let coll of listeCollegues" class="col-3 p-2">
+    <div *ngFor="let coll of listeCollegues | filter:saisie" class="col-3 p-2">
         <app-collegue (newCollegue) ="aChanger($event)"   [collegue]="coll"></app-collegue>
     </div>
 </div>

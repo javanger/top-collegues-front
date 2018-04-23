@@ -2,8 +2,8 @@
 <div class="card card-cascade wider">
     <img class="card-img-top" src="{{collegue.photo}}" alt="Card image cap">
     <div class="card-body">
-        <p class="card-text text-center"><a routerLink="/collegues/{{collegue.nom}}">{{collegue.nom}}</a></p>
-        <p class="card-text text-center">{{collegue.score}}</p>
+        <p class="card-text text-center"><a routerLink="/collegues/{{collegue.nom}}">{{collegue.nom | uppercase}}</a></p>
+        <p class="card-text text-center" [innerHTML]="collegue.score | score"></p>
         <app-avis (avis) ="aVote($event)" [aimeAtif]="isAimerActif()" [detesteAtif]="isDetesterActif()"></app-avis>
     </div>
 </div>

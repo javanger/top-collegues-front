@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue } from '../models';
+import { NgModel } from '@angular/forms'
 
 @Component({
   selector: 'app-liste-collegues',
@@ -9,6 +10,7 @@ import { Collegue } from '../models';
 export class ListeColleguesComponent implements OnInit {
 
   @Input() listeCollegues:Array<Collegue> = new Array();
+  saisie:string;
 
   constructor() { }
 
@@ -34,5 +36,9 @@ export class ListeColleguesComponent implements OnInit {
         return c;
       }
     });
+  }
+  
+  mySaisie(saisieInput:string){
+    this.saisie = saisieInput;
   }
 }

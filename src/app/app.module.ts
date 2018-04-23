@@ -16,6 +16,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopComponent } from './top/top.component';
 import { FlopComponent } from './flop/flop.component';
 import { DetailComponent } from './detail/detail.component';
+import { ScorePipe } from './pipes/score.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent }, // /page1 affiche le composant A
@@ -40,7 +42,9 @@ const appRoutes: Routes = [
     MenuComponent,
     TopComponent,
     FlopComponent,
-    DetailComponent
+    DetailComponent,
+    ScorePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
