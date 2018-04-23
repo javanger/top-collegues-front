@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajouter-un-collegue-component.component.scss']
 })
 export class AjouterUnCollegueComponentComponent implements OnInit {
-  private matricule: string;
-  private collegue:Collegue = new Collegue("", 0, "");
-  private message: string;
+  matricule: string;
+  collegue:Collegue = new Collegue("", 0, "");
+  message: string;
 
   constructor(private cServ:CollegueService, private router: Router) {}
 
