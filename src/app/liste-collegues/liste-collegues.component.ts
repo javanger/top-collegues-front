@@ -11,6 +11,7 @@ import { ColleguesService } from '../services/collegue.service';
 export class ListeColleguesComponent implements OnInit {
 
   @Input() listeCollegues: Array<Collegue>;
+  searchText: string = "";
 
   constructor(private serviceCollegue: ColleguesService) {
 
