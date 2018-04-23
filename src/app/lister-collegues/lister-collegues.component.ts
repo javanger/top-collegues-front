@@ -8,6 +8,7 @@ import { Avis, Collegue } from "../models";
 })
 export class ListerColleguesComponent implements OnInit {
 
+  pseudo:string;
   constructor() { }
 
 @Input() listeCollegues:Array<Collegue>;
@@ -15,5 +16,10 @@ export class ListerColleguesComponent implements OnInit {
 
   ngOnInit() {
   }
-   
+
+  filter(pseudoInput:string){
+this.pseudo = pseudoInput;
+
+  }
+  
 }
