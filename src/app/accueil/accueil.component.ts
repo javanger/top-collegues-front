@@ -7,5 +7,9 @@ import { Avis, Collegue } from '../models';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent {
-  
+
+  constructor() {
+
+  }
+
 }

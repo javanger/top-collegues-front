@@ -14,7 +14,6 @@ export class ColleguesService {
   constructor(private _http: HttpClient) { }
 
 
-
   listerCollegues(): Promise<Collegue[]> {
 
     // récupérer la liste des collègues côté serveur
@@ -23,7 +22,24 @@ export class ColleguesService {
       .then((data: any) => {
 
         console.log(data);
-        return data.map((s: any) => new Collegue(s.nom, s.prenom, s.score, s.urlImage));
+        return data.map((s: any) => new Collegue(s));
+
+      }, (error: any) => {
+
+        // cas erreur
+
+      });
+
+  }
+
+  getCollegue(nom : string): Promise<Collegue> {
+
+    // récupérer la liste des collègues côté serveur
+    return this._http.get(URL_BACKEND + "/collegues/" + nom)
+      .toPromise()
+      .then((data: any) => {
+
+        return data;
 
       }, (error: any) => {
 

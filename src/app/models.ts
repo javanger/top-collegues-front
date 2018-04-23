@@ -10,11 +10,8 @@ export class Collegue {
     score: number;
     urlImage: string;
 
-    constructor(nom: string, prenom: string, score: number, urlImage: string) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.score = score;
-        this.urlImage = urlImage;
+    constructor(obj: any) {
+        Object.assign(this, obj);
     }
 
 
