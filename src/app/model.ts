@@ -34,16 +34,16 @@ export class Vote{
 export class Collegue{
     pseudo:string
     score:number
-    photo:string
+    url:string
     nom:string
     prenom:string
     adresse:string
     email:string
 
-    constructor(pseudo:string, score:number, photo:string, nom?:string, prenom?:string, adresse?:string, email?:string){
+    constructor(pseudo:string, score:number, url:string, nom?:string, prenom?:string, adresse?:string, email?:string){
         this.pseudo = pseudo
         this.score = score
-        this.photo = photo
+        this.url = url
         this.nom = nom
         this.prenom = prenom
         this.adresse = adresse

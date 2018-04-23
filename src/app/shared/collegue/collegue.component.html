@@ -1,5 +1,5 @@
 <div class="card" >
-  <img class="card-img-top img-fluid" src="{{collegue.photo}}" alt="Card image cap">
+  <img class="card-img-top img-fluid" src="{{collegue.url}}" alt="Card image cap">
   <div class="card-body">
     <p class="card-text text-center"><a routerLink="/collegues/{{collegue.pseudo}}">{{(collegue.pseudo | uppercase)}}</a></p>
     <p class="card-text text-center" [innerHTML]="collegue.score | score"></p>
