@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FormsModule }   from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';  
 
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -14,6 +14,8 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
 import { ColleguesService } from './services/collegue.service';
 import { PageNonTrouveeComponent } from './page-non-trouvee/page-non-trouvee.component';
 import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
+import { ScorePipe } from './pipes/score.pipe';
+import { NomFilterPipe } from './pipes/nom-filter.pipe';
 
 const appRoutes: Routes = [
 
@@ -35,11 +37,14 @@ const appRoutes: Routes = [
     CollegueComponent,
     ListeColleguesComponent,
     PageNonTrouveeComponent,
-    DetailCollegueComponent
+    DetailCollegueComponent,
+    ScorePipe,
+    NomFilterPipe
 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot(appRoutes)

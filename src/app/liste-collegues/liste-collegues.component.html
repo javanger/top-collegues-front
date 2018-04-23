@@ -1,10 +1,17 @@
 <app-bandeau-component></app-bandeau-component>
 <div class="row">
 
-  <div *ngFor="let col of listeCollegues" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2 mt-2">
+  <div class="col-6 ml-2">
+    <input [(ngModel)]="searchText" placeholder="Rechercher">
+  </div>
 
-      <app-collegue-component [collegue]="col"></app-collegue-component>
+</div>
+<div class="row">
+
+  <div *ngFor="let col of listeCollegues | nomFilter : searchText" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2 mt-2 ">
+
+    <app-collegue-component [collegue]="col "></app-collegue-component>
 
   </div>
-    
+
 </div>

@@ -7,16 +7,17 @@ import { ColleguesService } from '../services/collegue.service';
   templateUrl: './liste-collegues.component.html',
   styleUrls: ['./liste-collegues.component.scss']
 })
+
 export class ListeColleguesComponent implements OnInit {
 
   @Input() listeCollegues: Array<Collegue>;
 
-  constructor(private serviceCollegue : ColleguesService) {
+  constructor(private serviceCollegue: ColleguesService) {
 
   }
 
   ngOnInit() {
-    this.serviceCollegue.listerCollegues().then((data : any) => {
+    this.serviceCollegue.listerCollegues().then((data: any) => {
       this.listeCollegues = data;
     })
   }

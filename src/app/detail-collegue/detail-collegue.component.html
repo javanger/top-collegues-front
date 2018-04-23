@@ -17,8 +17,7 @@
               {{collegue?.nom}} {{collegue?.prenom}}
             </div>
 
-            <div class="col-md-12 text-center">
-              {{collegue?.score}}
+            <div class="col-md-12 text-center" [innerHtml]="collegue?.score | score">
             </div>
 
             <div class="col-md-12 text-center">
