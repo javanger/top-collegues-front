@@ -3,11 +3,11 @@ import { Avis, Collegue } from "../models";
 import { CollegueService } from "../services/collegue.service";
 
 @Component({
-  selector: "app-demo",
-  templateUrl: "./demo.component.html",
-  styleUrls: ["./demo.component.scss"]
+  selector: "app-accueil",
+  templateUrl: "./accueil.component.html",
+  styleUrls: ["./accueil.component.scss"]
 })
-export class DemoComponent implements OnInit {
+export class AccueilComponent implements OnInit {
   collegueF: Collegue;
   listeColleguesF: Array<Collegue> = new Array();
 

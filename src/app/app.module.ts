@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { DemoComponent } from './demo/demo.component';
+import { AccueilComponent } from './accueil/accueil.component';
 import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
@@ -17,20 +17,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { Top3Component } from './top3/top3.component';
 import { NotePipe } from './note.pipe';
 import { PseudoPipe } from './pseudo.pipe';
+import { AjouterCollegueComponent } from './ajouter-collegue/ajouter-collegue.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
 
-  { path: 'accueil', component: DemoComponent }, // /page1 affiche le composant A
+  { path: 'accueil', component: AccueilComponent }, // /page1 affiche le composant A
   { path: 'top3', component: Top3Component }, // /page2 affiche le composant B
+  { path: 'collegues/nouveau', component: AjouterCollegueComponent },
   { path: 'collegues/:pseudo', component: DetailsComponent },
-  
-  { path: '',   redirectTo: '/top3', pathMatch: 'full' }, // redirige vers la route page1 par défaut
+    { path: '',   redirectTo: '/top3', pathMatch: 'full' }, // redirige vers la route page1 par défaut
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
+    AccueilComponent,
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
@@ -39,14 +41,16 @@ const appRoutes: Routes = [
     DetailsComponent,
     Top3Component,
     NotePipe,
-    PseudoPipe
+    PseudoPipe,
+    AjouterCollegueComponent
 
      ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [CollegueService],
   bootstrap: [AppComponent]

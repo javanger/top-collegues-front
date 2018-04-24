@@ -1,7 +1,13 @@
 <div class="row">
-  <button onclick="alert('Bouton pas encore developpé')" type="button" class="btn btn-primary waves-light" mdbRippleRadius>Raffraichir la liste</button>
+  <button  onclick='window.location.reload(false)' class="btn btn-primary waves-light">Raffraichir la liste</button>
 </div>
 
+
+<div class="row">
+  <div class="offset-9">
+    <button  type="button" class="btn btn-primary waves-light" routerLink="/collegues/nouveau" mdbRippleRadius>Ajouter un collègue</button>
+  </div>
+</div>
     <!-- Grid row -->
     <div class="row">
       
@@ -21,4 +27,4 @@
       <app-collegue  [collegue]="coll" ></app-collegue>
     </div>
   </div>
-  
+ 
