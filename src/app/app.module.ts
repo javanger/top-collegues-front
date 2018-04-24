@@ -20,6 +20,7 @@ import { ScorePipe } from './pipes/score.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormsModule } from '@angular/forms';
+import { VotreDernierAvisComponent } from './votre-dernier-avis/votre-dernier-avis.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent }, // /page1 affiche le composant A
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     DetailComponent,
     ScorePipe,
     FilterPipe,
-    FormulaireComponent
+    FormulaireComponent,
+    VotreDernierAvisComponent
   ],
   imports: [
     BrowserModule,FormsModule,

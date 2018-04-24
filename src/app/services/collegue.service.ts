@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Collegue, Avis, MonModel } from '../models';
+import { Collegue, Avis, MonModel, Vote } from '../models';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -51,9 +54,10 @@ export class CollegueService {
       },
       // options de la requête HTTP
        httpOptions
-      )
-      .map((data: any) => {
-        return data
+      ).map(data =>  new Collegue(data))
+      .do((collegue) => {
+        const vote:Vote = new Vote(new Collegue(collegue),avis)
+        this.action.next(vote)
       })
   }
 
@@ -93,8 +97,14 @@ export class CollegueService {
       },
       // options de la requête HTTP
       httpOptions
-      ).toPromise().then(() =>
+      ).do(() =>
         this.router.navigate(['/accueil'])
-      )
+      ).subscribe();
+  }
+
+  private action = new Subject<Vote>();
+  
+  get actionObs() {
+    return this.action.asObservable();
   }
 }
