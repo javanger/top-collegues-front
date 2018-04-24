@@ -24,7 +24,7 @@ export class AccueilComponent implements OnInit {
           
   }
   list(){
-    this.cService.listerCollegues().then( l => this.listeColleguesF = l  )}
+    this.cService.listerCollegues().subscribe( l => this.listeColleguesF = l  )}
 
   ajoutAvis(event) {
     if (event == Avis.AIMER) {

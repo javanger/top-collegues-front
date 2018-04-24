@@ -14,4 +14,22 @@
    
   }
 
+  export class Vote{
+    
+    constructor(public collegue:Collegue, public avis:Avis, public note:number){
+   
+    }
+
+    get Collegue(){
+        return this.collegue;
+    }
+
+    get Avis(){
+        return this.avis;
+    }
+    get Note(){
+      return this.note;
+    }
+  }
+
   

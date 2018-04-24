@@ -1,64 +1,82 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../environments/environment";
-import { Collegue, Avis } from "../models";
-import {  HttpClient,  HttpResponse,  HttpErrorResponse,  HttpHeaders} from "@angular/common/http";
-import { Router } from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import { Collegue, Avis, Vote } from "../models";
+import {
+  HttpClient,
+  HttpResponse,
+  HttpErrorResponse,
+  HttpHeaders
+} from "@angular/common/http";
+import { Router } from "@angular/router";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/do";
+import { Subject } from "rxjs/Subject";
 
 const URL_BACKEND = environment.backendUrl;
 
 @Injectable()
 export class CollegueService {
-  constructor(private _http: HttpClient, private router: Router) {} 
+  constructor(private _http: HttpClient, private router: Router) {}
 
-  listerColleguesO():Observable<Collegue[]>{
-    return null;
+  listerCollegues(): Observable<Collegue[]> {
+    return this._http.get(URL_BACKEND + "collegues").map(
+      (data: any) => {
+        return data.map(
+          c =>
+            new Collegue(
+              c.photo,
+              c.matricule,
+              c.pseudo,
+              c.note,
+              c.nom,
+              c.prenom,
+              c.email,
+              c.adresse
+            )
+        );
+      },
+      (error: any) => {}
+    );
   }
 
-  listerCollegues(): Promise<Collegue[]> {
-    // récupérer la liste des collègues côté serveur
-    return this._http
-      .get(URL_BACKEND + "collegues")
-      .toPromise()
-      .then(
-        (data: any) => {
-          return data.map(c => new Collegue(c.photo,c.matricule, c.pseudo, c.note, c.nom, c.prenom, c.email, c.adresse));
-        },
-        (error: any) => {}
-      );
-     }
-     
-     donnerUnAvisO(unCollegue:Collegue, avis:Avis):Observable<Collegue>{
-      return null;
-     }
-  donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
-    //  Aimer ou Détester un collègue côté serveur
+  donnerUnAvis(unCollegue: Collegue, avis: Avis): Observable<Collegue> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     };
+
     return this._http
-      .patch(
+      .patch<Collegue>(
         URL_BACKEND + "collegues/" + unCollegue.pseudo,
-         {   action: avis  },
+        {
+          action: avis
+        },
         httpOptions
       )
-      .toPromise()
-      .then((data: any) => {
-        return data;
+      .do(collegue => {
+        const vote: Vote = new Vote(collegue, avis, collegue.note);
+        this.action.next(vote);
       });
   }
 
-  trouverCollegue(pseudo:string):Promise<Collegue>{
-    return this._http.get(URL_BACKEND + "collegues/" + pseudo)
-    .toPromise()
-    .then((c: any) => {
-       return new Collegue(c.photo,c.matricule, c.pseudo, c.note, c.nom, c.prenom, c.email, c.adresse)
+  trouverCollegue(pseudo: string): Observable<Collegue> {
+    return this._http.get(URL_BACKEND + "collegues/" + pseudo).map((c: any) => {
+      return new Collegue(
+        c.photo,
+        c.matricule,
+        c.pseudo,
+        c.note,
+        c.nom,
+        c.prenom,
+        c.email,
+        c.adresse
+      );
     });
   }
 
-  AjouterCollegue(leCollegue:any):void {
+  AjouterCollegue(leCollegue: any): void {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
@@ -66,21 +84,23 @@ export class CollegueService {
     };
     this._http
       .post(
-        URL_BACKEND + "collegues/nouveau" ,
-         {  
-          
-            "matricule" : leCollegue.matricule,
-            "pseudo": leCollegue.pseudo,
-            "urlImage" : leCollegue.URL,
-        
-           },
+        URL_BACKEND + "collegues/nouveau",
+        {
+          matricule: leCollegue.matricule,
+          pseudo: leCollegue.pseudo,
+          urlImage: leCollegue.URL
+        },
         httpOptions
       )
-      .toPromise()
-      .then(() => { 
-        this.router.navigate(['/accueil']) ;
-      });
+      .do(() => {
+        this.router.navigate(["/accueil"]);
+      })
+      .subscribe();
   }
 
+  private action = new Subject<Vote>();
 
+  get actionObs() {
+    return this.action.asObservable();
+  }
 }

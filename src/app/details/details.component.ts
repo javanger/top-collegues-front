@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
 
   constructor( private route: ActivatedRoute,  private cService: CollegueService) {
     this.pseudo = route.snapshot.paramMap.get("pseudo");
-   this.cService.trouverCollegue(this.pseudo).then( l => (
+   this.cService.trouverCollegue(this.pseudo).subscribe( l => (
     this.collegue = l));
   }
 
@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
   ajoutAvis(event) {
     this.cService
       .donnerUnAvis(this.collegue, event)
-      .then(c => (this.collegue = c));
+      .subscribe(c => (this.collegue = c));
   }
     
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Avis, Collegue } from "../models";
 import { CollegueService } from "../services/collegue.service";
+import { AvisService } from "../services/avis.service";
 
 @Component({
   selector: "app-collegue",
@@ -10,12 +11,16 @@ import { CollegueService } from "../services/collegue.service";
 export class CollegueComponent implements OnInit {
   @Input() collegue: Collegue;
 
-  constructor(private cService: CollegueService) {}
+  constructor(private cService: CollegueService, private aService:AvisService) {}
 
   ngOnInit() {}
-  ajoutAvis(event) {
+
+  ajoutAvis(event:Avis) {
     this.cService
       .donnerUnAvis(this.collegue, event)
-      .then(c => (this.collegue = c));
+      .subscribe(c => (this.collegue.note = c.note));
   }
+
+ 
+  
 }

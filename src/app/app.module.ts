@@ -19,6 +19,8 @@ import { NotePipe } from './note.pipe';
 import { PseudoPipe } from './pseudo.pipe';
 import { AjouterCollegueComponent } from './ajouter-collegue/ajouter-collegue.component';
 import { FormsModule } from '@angular/forms';
+import { VotreDernierAvisComponent } from './votre-dernier-avis/votre-dernier-avis.component';
+import { AvisService } from './services/avis.service';
 
 const appRoutes: Routes = [
 
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     Top3Component,
     NotePipe,
     PseudoPipe,
-    AjouterCollegueComponent
+    AjouterCollegueComponent,
+    VotreDernierAvisComponent
 
      ],
   imports: [
@@ -52,7 +55,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [CollegueService],
+  providers: [CollegueService,
+    AvisService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
