@@ -1,0 +1,12 @@
+<div class="border rounded p-2 mt-2">
+  <h5 class="text-center align-middle">Historique</h5>
+</div>
+<div class="border rounded p-2">
+    <div *ngFor="let voteOfList of listVotes" class="row pt-1">
+        <div class="col-3"><img class="img-fluid" src={{voteOfList.collegue.photo}}></div>
+        <div class="col-9">
+          <p>{{voteOfList.collegue.pseudo}}</p>
+          <p>{{voteOfList.collegue.pseudo}} est {{voteOfList.avis | lowercase}}, son score est a : {{voteOfList.score}}</p>
+        </div>
+    </div>
+</div>
