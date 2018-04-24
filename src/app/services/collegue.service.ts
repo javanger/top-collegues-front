@@ -3,12 +3,17 @@ import { environment } from "../../environments/environment";
 import { Collegue, Avis } from "../models";
 import {  HttpClient,  HttpResponse,  HttpErrorResponse,  HttpHeaders} from "@angular/common/http";
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 
 const URL_BACKEND = environment.backendUrl;
 
 @Injectable()
 export class CollegueService {
   constructor(private _http: HttpClient, private router: Router) {} 
+
+  listerColleguesO():Observable<Collegue[]>{
+    return null;
+  }
 
   listerCollegues(): Promise<Collegue[]> {
     // récupérer la liste des collègues côté serveur
@@ -23,6 +28,9 @@ export class CollegueService {
       );
      }
      
+     donnerUnAvisO(unCollegue:Collegue, avis:Avis):Observable<Collegue>{
+      return null;
+     }
   donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
     //  Aimer ou Détester un collègue côté serveur
     const httpOptions = {

@@ -1,30 +1,31 @@
 <div class="row">
-  <button  onclick='window.location.reload(false)' class="btn btn-primary waves-light">Raffraichir la liste</button>
+  <div class="mt-2">
+  <button onclick='window.location.reload(false)' class="btn btn-primary waves-light">Raffraichir la liste</button>
+</div>
 </div>
 
+<!-- Grid row -->
+<div class="row">
+
+  <!-- Material input -->
+  <label  class="mt-5">
+    <h5>Filtrer par pseudo :</h5>
+  </label>
+  <div class="col-3 mt-5">
+    <div class="col-sm-10">
+      <div class="md-form ">
+        <input (keyup)="filter(pseudoInput.value)" #pseudoInput type="email"  placeholder="Pseudo">
+      </div>
+    </div>
+  </div>
+  <div class="col-3 offset-4 mt-4">
+    <button type="button" class="btn btn-primary waves-light" routerLink="/collegues/nouveau">Ajouter un collègue</button>
+  </div>
+</div>
 
 <div class="row">
-  <div class="offset-9">
-    <button  type="button" class="btn btn-primary waves-light" routerLink="/collegues/nouveau" mdbRippleRadius>Ajouter un collègue</button>
+
+  <div *ngFor="let coll of listeCollegues | pseudo:pseudo " class="col-3 p-1 m-5">
+    <app-collegue [collegue]="coll"></app-collegue>
   </div>
 </div>
-    <!-- Grid row -->
-    <div class="row">
-      
-        <!-- Material input -->
-        <label for="inputEmail3MD" class="mt-2"><strong>Filtrer par pseudo :</strong></label>
-        <div class = "col-4">
-        <div class="col-sm-10">
-            <div class="md-form mt-0">
-                <input (keyup)= "filter(pseudoInput.value)" #pseudoInput type="email"  id="inputEmail3MD" placeholder="Pseudo">
-            </div>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-    
-    <div *ngFor="let coll of listeCollegues | pseudo:pseudo " class="col-3 p-1 m-5" >
-      <app-collegue  [collegue]="coll" ></app-collegue>
-    </div>
-  </div>
- 

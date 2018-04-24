@@ -1,18 +1,22 @@
-<div class="card">
- 
+<div class="card " width="100%">
+  <div class="">
+
     <!--Card image-->
-    <img class="img-fluid" src="{{collegue.photo}}" width="460" >
+    <img class="img-fluid" src="{{collegue.photo}}" width="460">
 
     <!--Card content-->
     <div class="card-body">
       <!--Title-->
-      <h4 class="card-title text-center"><a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active-link">{{collegue.pseudo | uppercase}}</a></h4>
+      <h4 class="card-title text-center">
+        <a routerLink="/collegues/{{collegue.pseudo}}" routerLinkActive="active-link">{{collegue.pseudo | uppercase}}</a>
+      </h4>
       <!--Text-->
       <p class="card-text text-center" [innerHtml]="collegue.note | note"></p>
       <br/>
-      <app-avis [note] = "collegue.note" (formEvent)="ajoutAvis($event)" ></app-avis>
+      <app-avis [note]="collegue.note" (formEvent)="ajoutAvis($event)"></app-avis>
       <br/>
 
     </div>
 
   </div>
+</div>
