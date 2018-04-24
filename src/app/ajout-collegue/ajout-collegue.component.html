@@ -1,0 +1,42 @@
+<form (ngSubmit)="submit()">
+    <p class="h5 text-center mb-4">Création collègue</p>
+  
+    <div class="row justify-content-md-center">
+      <div class="md-form col-lg-3">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="matricule" class="form-control" mdbActive mdbInputDirective [(ngModel)]="newCollegue.matricule" name="matricule" #matricule="ngModel" required>
+        <label for="matricule">Matricule</label>
+      </div>
+    </div>
+  
+    <div class="row justify-content-md-center">
+      <div class="md-form col-lg-3">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="nom" class="form-control" mdbActive mdbInputDirective [(ngModel)]="newCollegue.nom" name="nom" #nom="ngModel" required>
+        <label for="nom">Nom</label>
+      </div>
+    </div>
+  
+    <div class="row justify-content-md-center">
+      <div class="md-form col-lg-3">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="prenom" class="form-control" mdbActive mdbInputDirective [(ngModel)]="newCollegue.prenom" name="prenom" #prenom="ngModel" required>
+        <label for="prenom">Prénom</label>
+      </div>
+    </div>
+  
+    <div class="row justify-content-md-center">
+      <div class="md-form col-lg-3">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="image" class="form-control" mdbActive mdbInputDirective [(ngModel)]="newCollegue.urlImage" name="urlImage" #urlImage="ngModel" required>
+        <label for="image">Image</label>
+      </div>
+    </div>
+  
+    <div class="text-center">
+      <button type="submit" class="btn btn-unique waves-light" [disabled]="!(matricule.valid && nom.valid && prenom.valid && urlImage.valid)" mdbWavesEffect>Envoyer
+        <i class="fa fa-paper-plane-o ml-1"></i>
+      </button>
+    </div>
+  </form>
+  

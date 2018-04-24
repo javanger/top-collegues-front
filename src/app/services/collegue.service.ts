@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Collegue, Avis } from '../models';
-import { environment } from '../../environments/environment.prod'
+import { Collegue, Avis, NewCollegue } from '../models';
+import { environment } from '../../environments/environment'
 import { HttpHeaders } from "@angular/common/http";
 
 const URL_BACKEND = environment.backendUrl;
@@ -44,6 +44,41 @@ export class ColleguesService {
       }, (error: any) => {
 
         // cas erreur
+
+      });
+
+  }
+
+  sendNewCollegue(newCollegue : NewCollegue): Promise<Collegue> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    };
+
+    return this._http
+      .post(
+        // url d'accès au service
+        URL_BACKEND + "/collegues/nouveau",
+
+        // corps de la réquête
+        {
+          'matricule': newCollegue.matricule,
+          'nom': newCollegue.nom,
+          'prenom' : newCollegue.prenom,
+          'urlImage' : newCollegue.urlImage
+        },
+
+        // options de la requête HTTP
+        httpOptions
+      )
+      .toPromise()
+      .then((data: any) => {
+
+        console.log(data);
+
+        return data;
 
       });
 

@@ -18,3 +18,18 @@ export class Collegue {
 
 
 }
+
+export class NewCollegue {
+
+    matricule: string;
+    nom: string;
+    prenom: string;
+    urlImage: string;
+
+
+    constructor(obj: any) {
+        Object.assign(this, obj);
+    }
+
+
+}

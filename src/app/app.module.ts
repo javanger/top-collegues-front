@@ -16,12 +16,14 @@ import { PageNonTrouveeComponent } from './page-non-trouvee/page-non-trouvee.com
 import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { NomFilterPipe } from './pipes/nom-filter.pipe';
+import { AjoutCollegueComponent } from './ajout-collegue/ajout-collegue.component';
 
 const appRoutes: Routes = [
 
   { path: 'accueil', component: AccueilComponent }, // /accueil affiche le composant Accueil
   { path: 'collegues', component: ListeColleguesComponent }, // /listeCollegues affiche le composant Accueil
-  { path: 'collegues/:nom', component: DetailCollegueComponent }, // /accueil affiche le composant Accueil
+  { path: 'collegues/nouveau', component: AjoutCollegueComponent}, // Affiche le formulaire d'ajout d'un collègue
+  { path: 'collegues/:nom', component: DetailCollegueComponent }, // Affiche le détail d'un collègue
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // redirige vers la route accueil par défaut
   { path: '**', component: PageNonTrouveeComponent } // page non trouvée
 
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     PageNonTrouveeComponent,
     DetailCollegueComponent,
     ScorePipe,
-    NomFilterPipe
+    NomFilterPipe,
+    AjoutCollegueComponent
 
   ],
   imports: [
