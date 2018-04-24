@@ -1,0 +1,28 @@
+<form #monForm="ngForm">
+  <p class="h5 text-center mb-4">Saisie d'un nouveau collègues</p>
+
+  <div class="md-form">
+    <i class="fa fa-drivers-license-o prefix grey-text"></i>
+    <input [(ngModel)]="monModel.matricule"  #matricule="ngModel" required name="matricule"
+      minlength="2" type="text" class="form-control" mdbActive/>
+    <label>Matricule</label>
+  </div>
+
+  <div class="md-form">
+    <i class="fa fa-user prefix grey-text"></i>
+    <input [(ngModel)]="monModel.pseudo" #pseudo="ngModel" required name="pseudo"
+      type="text" class="form-control" mdbActive/>
+    <label>Pseudo</label>
+  </div>
+
+  <div class="md-form">
+    <i class="fa fa-camera-retro prefix grey-text"></i>
+    <input [(ngModel)]="monModel.url" #url="ngModel" name="url"
+      type="text" class="form-control" mdbActive />
+    <label>URL image</label>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" [disabled]="!(matricule.valid&&pseudo.valid)" (click)="submit()"  class="btn btn-deep-orange waves-light" mdbWavesEffect>Ajouter</button>
+  </div>
+</form>

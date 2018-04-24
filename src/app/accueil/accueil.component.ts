@@ -25,7 +25,7 @@ export class AccueilComponent implements OnInit {
         this.listeColleguesFictifs.sort((a, b) => {
           let order =  b.score - a.score; 
           if(order === 0) {
-            order = a.nom.localeCompare(b.nom);
+            order = a.pseudo.localeCompare(b.pseudo);
           }
           return order
         });

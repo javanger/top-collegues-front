@@ -10,8 +10,8 @@ export class AvisComponent implements OnInit {
   libelle:string = "";
 
   @Output() avis = new EventEmitter<Avis>();
-  @Input() aimeAtif:boolean = true
-  @Input() detesteAtif:boolean = true
+  @Input() aimeAtif:boolean;
+  @Input() detesteAtif:boolean;
 
   constructor() {}
 

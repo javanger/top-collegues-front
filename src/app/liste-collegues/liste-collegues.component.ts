@@ -21,7 +21,7 @@ export class ListeColleguesComponent implements OnInit {
     this.listeCollegues = this.listeCollegues.sort((a, b) => {
       let order =  b.score - a.score; 
       if(order === 0) {
-        order = a.nom.localeCompare(b.nom);
+        order = a.pseudo.localeCompare(b.pseudo);
       }
       return order
     });
@@ -29,7 +29,7 @@ export class ListeColleguesComponent implements OnInit {
 
   aChanger(newCollegue:Collegue){
     this.listeCollegues = this.listeCollegues.map(c => {
-      if(c.nom === newCollegue.nom) {
+      if(c.pseudo === newCollegue.pseudo) {
         return newCollegue;
       }
       else{

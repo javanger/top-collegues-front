@@ -3,6 +3,8 @@ export enum Avis{
     DETESTER
 }
 export class Collegue{
+    pseudo:string
+    prenom:string
     nom:string
     score:number
     photo:string
@@ -14,3 +16,9 @@ export class Collegue{
     }
     
 }
+
+export class MonModel { 
+    matricule:string; 
+    pseudo:string; 
+    url:string
+ }

@@ -10,12 +10,12 @@ import { Collegue, Avis } from '../models';
 })
 export class DetailComponent implements OnInit {
 
-  nom: string;
+  pseudo: string;
   @Input() collegue:Collegue = new Collegue({});
 
   // Injection du service ActivatedRoute
   constructor(private route: ActivatedRoute, private cService:CollegueService) {
-      this.nom = route.snapshot.paramMap.get("nom")
+      this.pseudo = route.snapshot.paramMap.get("pseudo")
       this.detail();
   }
 
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
   }
 
   detail(){
-    this.cService.detail(this.nom).then(data => {
+    this.cService.detail(this.pseudo).then(data => {
       this.collegue = data;
    });
   }

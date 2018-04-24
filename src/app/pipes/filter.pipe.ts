@@ -10,6 +10,6 @@ export class FilterPipe implements PipeTransform {
     if(!recherche) {
       return value
     }
-    return value.filter(v => v.nom.toLowerCase().includes(recherche.toLowerCase()))
+    return value.filter(v => v.pseudo.toLowerCase().includes(recherche.toLowerCase()))
   }
 }

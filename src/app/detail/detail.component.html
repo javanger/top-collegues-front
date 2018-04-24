@@ -3,10 +3,12 @@
   <div class="card card-cascade wider">
     <img class="card-img-top" src="{{collegue.photo}}" alt="Card image cap">
     <div class="card-body">
-        <p class="card-text text-center">{{collegue.nom | uppercase}}</p>
+        <p class="card-text text-center">{{collegue.pseudo | uppercase}}</p>
+        <p class="card-text text-center">Nom : {{collegue.nom}}</p>
+        <p class="card-text text-center">Prenom : {{collegue.prenom}}</p>
         <p class="card-text text-center" [innerHTML]="collegue.score | score">{{collegue.score}}</p>
-        <p class="card-text text-center">{{collegue.email}}</p>
-        <p class="card-text text-center">{{collegue.pays}}</p>
+        <p class="card-text text-center">Email : {{collegue.email}}</p>
+        <p class="card-text text-center">Pays : {{collegue.pays}}</p>
         <app-avis (avis) ="aVote($event)" [aimeAtif]="isAimerActif()" [detesteAtif]="isDetesterActif()"></app-avis>
     </div>
   </div>

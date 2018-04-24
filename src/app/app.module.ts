@@ -18,6 +18,8 @@ import { FlopComponent } from './flop/flop.component';
 import { DetailComponent } from './detail/detail.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FormulaireComponent } from './formulaire/formulaire.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent }, // /page1 affiche le composant A
@@ -26,7 +28,9 @@ const appRoutes: Routes = [
 
   { path: 'flop', component: FlopComponent },
 
-  { path: 'collegues/:nom', component: DetailComponent },
+  { path: 'collegues/nouveau', component: FormulaireComponent },
+
+  { path: 'collegues/:pseudo', component: DetailComponent },
 
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' } // redirige vers la route page1 par défaut
 ]
@@ -44,13 +48,15 @@ const appRoutes: Routes = [
     FlopComponent,
     DetailComponent,
     ScorePipe,
-    FilterPipe
+    FilterPipe,
+    FormulaireComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,FormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
+    
   ],
   providers: [CollegueService],
   bootstrap: [AppComponent]
