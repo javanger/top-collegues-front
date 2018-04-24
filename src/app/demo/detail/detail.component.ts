@@ -21,7 +21,7 @@ pseudo: string;
   }
 
   AfficherDetails(){
-    this._collegue.recupererCollegue(this.pseudo).then((data: Collegue) => {  
+    this._collegue.recupererCollegue(this.pseudo).subscribe((data: Collegue) => {  
       console.log(data);      
       this.colleguedetail = data;
       console.log(this.colleguedetail);
@@ -36,22 +36,20 @@ pseudo: string;
 
   score(event:Avis){
     if(event === Avis.AIMER){
-      this._collegue.donnerUnAvis(this.colleguedetail, event).then((data: Collegue) => {  
+      this._collegue.donnerUnAvis(this.colleguedetail, event).subscribe((data: Collegue) => {  
       this.colleguedetail = data
     },(error: HttpErrorResponse) => {
       alert("Une erreur lors de la modification du score de : " +this.colleguedetail.pseudo)
       console.log("error : ", error);
     });
-      Object.assign(this.colleguedetail, { score : this.colleguedetail.score += 10});
     }
     else if(event === Avis.DETESTER){
-      this._collegue.donnerUnAvis(this.colleguedetail, event).then((data: Collegue) => {  
+      this._collegue.donnerUnAvis(this.colleguedetail, event).subscribe((data: Collegue) => {  
         console.log("Collegue : " + data);        
       },(error: HttpErrorResponse) => {
         alert("Une erreur lors de la modification du score de : " +this.colleguedetail.pseudo)
         console.log("error : ", error);
       });
-      Object.assign(this.colleguedetail, { score : this.colleguedetail.score -= 5});
     }
   }
 

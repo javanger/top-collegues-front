@@ -3,7 +3,7 @@
   <div class="card-body">
     <!--Title-->
     <h2 class="font-weight-bold cyan-text text-center">{{colleguedetail?.pseudo}}</h2>
-    <p class="white-text text-center">{{colleguedetail?.score}}</p>
+    <p class="white-text text-center" [innerHTML]="colleguedetail?.score | score"></p>
     <!--Text-->
     <p class="white-text">Nom : {{colleguedetail?.nom}}</p>
     <p class="white-text">Prenom : {{colleguedetail?.prenom}}</p>

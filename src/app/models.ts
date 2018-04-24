@@ -1,6 +1,6 @@
 export enum Avis {
     AIMER = "AIMER",
-    DETESTER = "DETESTER",
+    DETESTER = "DETESTER"
 }
 
 export class Collegue {
@@ -21,4 +21,20 @@ export class Collegue {
         this.email = email
         this.adresse = adresse
     }
+}
+
+export class Vote {
+    id:number
+    avis:Avis
+    collegue:Collegue
+    score:number
+
+    constructor(id:number, avis:Avis, collegue:Collegue, score:number) {
+        this.id = id
+        this.avis = avis
+        this.collegue = collegue
+        this.score = score
+    }
+
+
 }

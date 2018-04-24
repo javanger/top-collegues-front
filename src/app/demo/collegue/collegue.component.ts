@@ -17,22 +17,20 @@ export class CollegueComponent implements OnInit {
 
   score(event:Avis){
     if(event === Avis.AIMER){
-      this._collegue.donnerUnAvis(this.collegue, event).then((data: Collegue) => {  
+      this._collegue.donnerUnAvis(this.collegue, event).subscribe((data: Collegue) => {  
       this.collegue = data
     },(error: HttpErrorResponse) => {
       alert("Une erreur lors de la modification du score de : " +this.collegue.pseudo)
       console.log("error : ", error);
     });
-      Object.assign(this.collegue, { score : this.collegue.score += 10});
     }
     else if(event === Avis.DETESTER){
-      this._collegue.donnerUnAvis(this.collegue, event).then((data: Collegue) => {  
+      this._collegue.donnerUnAvis(this.collegue, event).subscribe((data: Collegue) => {  
         console.log("Collegue : " + data);        
       },(error: HttpErrorResponse) => {
         alert("Une erreur lors de la modification du score de : " +this.collegue.pseudo)
         console.log("error : ", error);
       });
-      Object.assign(this.collegue, { score : this.collegue.score -= 5});
     }
   }
 

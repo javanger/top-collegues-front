@@ -1,6 +1,14 @@
-<button type="button" class="btn btn-indigo" (click)="constructor()"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Rafraichir la liste</button>
 <div class="row">
-    <div *ngFor="let collegueOfList of listCollegues" class="col-3 p-3">
+    <div class=" col d-flex justify-content-start"><button type="button" class="btn btn-indigo" (click)="RecupererCollegue()"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Rafraichir la liste</button></div>
+    <div class=" col d-flex justify-content-end"><button type="button" class="btn btn-indigo">Ajouter un collegue</button></div>
+</div>
+<div animated class="md-form justify-content-end mt-2">
+    <input mdbActive mdbInputDirective type="text" [(ngModel)]="recherche" class="form-control">
+    <label for="inputRecherche" class="">Recherche</label>
+</div>
+
+<div class="row">
+    <div *ngFor="let collegueOfList of listCollegues | filter:recherche" class="col-3 p-3">
         <app-collegue [collegue]="collegueOfList"></app-collegue>
     </div>
 </div>

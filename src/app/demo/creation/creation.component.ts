@@ -19,7 +19,7 @@ export class CreationComponent{
 
   RecuperationForm(){
 
-    this._collegue.ajouterCollegue(this.model.matricule, this.model.pseudo, this.model.image).then((data: any) => {  
+    this._collegue.ajouterCollegue(this.model.matricule, this.model.pseudo, this.model.image).subscribe((data: any) => {  
       console.log(data);   
       this.changerDePage()         
     },(error: HttpErrorResponse) => {
