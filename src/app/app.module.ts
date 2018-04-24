@@ -21,6 +21,7 @@ import { ScorePipe } from './pipes/score.pipe'
 import { FilterPipe } from './pipes/filter.pipe';
 import { HistoriqueVotesComponent } from './demo/historique-votes/historique-votes.component';
 
+
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'creation', component: CreationComponent },  
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     ScorePipe,
     FilterPipe,
     HistoriqueVotesComponent
+
   ],
   imports: [
     BrowserModule,
