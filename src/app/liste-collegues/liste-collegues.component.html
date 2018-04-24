@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row col-12">
     <div class="col-3 text-left">
         <button type="button" (click)="trier()" class="btn btn-outline-primary" mdbWavesEffect>Trier la liste</button>
     </div>
-    <div class="col-3 offset-6 text-right">
+    <div class="col-3 offset-4 offset-md-6 text-right">
         <button type="button" class="btn btn-outline-primary" routerLink="/collegues/nouveau" mdbWavesEffect>Ajouter</button>
     </div>
 </div>
@@ -11,7 +11,7 @@
     <label for="inputRecherche" class="">Filtrer par nom</label>
 </div>
 <div class="row">
-    <div *ngFor="let coll of listeCollegues | filter:saisie" class="col-3 p-2">
+    <div *ngFor="let coll of listeCollegues | filter:saisie" class="col-lg-3 col-md-6 col-12 p-2">
         <app-collegue (newCollegue) ="aChanger($event)"   [collegue]="coll"></app-collegue>
     </div>
 </div>

@@ -1,8 +1,10 @@
 <header class="container">
     <app-bandeau></app-bandeau>
 </header>
-<app-menu></app-menu>
-<div class="container" id="content">
+<nav class="container-fluid sticky-top">
+    <app-menu></app-menu>
+</nav>
+<article class="container" id="content">
     <router-outlet></router-outlet>
-</div>
+</article>
 <footer></footer>
