@@ -28,7 +28,7 @@ export class DetailCollegueComponent implements OnInit {
   impactForm(avis: Avis) {
 
     this.serviceCollegue.donnerUnAvis(this.collegue, avis)
-      .then(c => this.collegue.score = c.score);
+      .subscribe(c => this.collegue.score = c.score);
 
   }
 

@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Collegue, Avis, NewCollegue } from '../models';
 import { environment } from '../../environments/environment'
 import { HttpHeaders } from "@angular/common/http";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -14,12 +16,12 @@ export class ColleguesService {
   constructor(private _http: HttpClient) { }
 
 
-  listerCollegues(): Promise<Collegue[]> {
+  listerCollegues(): Observable<Collegue[]> {
 
     // récupérer la liste des collègues côté serveur
     return this._http.get(URL_BACKEND + "/collegues")
-      .toPromise()
-      .then((data: any) => {
+
+      .map((data: any) => {
 
         console.log(data);
         return data.map((s: any) => new Collegue(s));
@@ -84,7 +86,7 @@ export class ColleguesService {
 
   }
 
-  donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
+  donnerUnAvis(unCollegue: Collegue, avis: Avis): Observable<Collegue> {
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -106,8 +108,8 @@ export class ColleguesService {
         // options de la requête HTTP
         httpOptions
       )
-      .toPromise()
-      .then((data: any) => {
+
+      .map((data: any) => {
 
         console.log(data);
 
