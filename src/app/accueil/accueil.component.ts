@@ -19,7 +19,7 @@ export class AccueilComponent implements OnInit {
   }
 
   list() {
-    this.cService.list().then(
+    this.cService.list().subscribe(
       data => {
         this.listeColleguesFictifs = data
         this.listeColleguesFictifs.sort((a, b) => {

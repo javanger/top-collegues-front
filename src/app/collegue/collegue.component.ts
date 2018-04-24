@@ -19,7 +19,8 @@ export class CollegueComponent implements OnInit {
   }
   
   aVote(avis:Avis) {
-    this.cService.aVote(this.collegue, avis).then(data =>{
+    this.cService.aVote(this.collegue, avis)
+    .subscribe(data =>{
       this.collegue = data;
       this.newCollegue.emit(this.collegue);
     })

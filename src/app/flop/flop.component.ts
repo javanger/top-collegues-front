@@ -19,8 +19,8 @@ export class FlopComponent implements OnInit {
   }
 
   flop() {
-    this.cService.flop().then(
-      data => {
+    this.cService.flop()
+    .subscribe(data => {
         this.listeColleguesFictifs = data
         this.listeColleguesFictifs.sort((a, b) => {
           return a.score - b.score; 

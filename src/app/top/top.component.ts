@@ -20,8 +20,8 @@ export class TopComponent implements OnInit {
   }
 
   top() {
-    this.cService.top().then(
-      data => {
+    this.cService.top()
+    .subscribe(data => {
         this.listeColleguesFictifs = data
         this.listeColleguesFictifs.sort((a, b) => {
           return b.score - a.score; 

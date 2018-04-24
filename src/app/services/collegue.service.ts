@@ -3,6 +3,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Collegue, Avis, MonModel } from '../models';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/map';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -11,31 +14,28 @@ export class CollegueService {
 
   constructor(private _http:HttpClient, private router: Router) { }
 
-  list():Promise<Collegue[]> { 
+  list():Observable<Collegue[]> { 
     return this._http.get(URL_BACKEND + "collegue")
-    .toPromise()
-    .then((data: any) => {
-      return data.map((d:any) => new Collegue(d))
-    });
+    .map((data: any) => {
+        return data.map((d:any) =>  new Collegue(d))
+      })
   }
 
-  top():Promise<Collegue[]> { 
+  top():Observable<Collegue[]> { 
     return this._http.get(URL_BACKEND + "collegue/top")
-    .toPromise()
-    .then((data: any) => {
+    .map((data: any) => {
       return data.map((d:any) => new Collegue(d))
     });
   }
 
-  flop():Promise<Collegue[]> { 
+  flop():Observable<Collegue[]> { 
     return this._http.get(URL_BACKEND + "collegue/flop")
-    .toPromise()
-    .then((data: any) => {
+    .map((data: any) => {
       return data.map((d:any) => new Collegue(d))
     });
   }
 
-  aVote(collegue:Collegue, avis:Avis):Promise<Collegue>{
+  aVote(collegue:Collegue, avis:Avis):Observable<Collegue>{
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
@@ -52,13 +52,12 @@ export class CollegueService {
       // options de la requête HTTP
        httpOptions
       )
-      .toPromise()
-      .then((data: any) => {
+      .map((data: any) => {
         return data
       })
   }
 
-  detail(nom:String):Promise<Collegue>{
+  detail(nom:String):Observable<Collegue>{
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
@@ -71,8 +70,7 @@ export class CollegueService {
       // options de la requête HTTP
       httpOptions
       )
-      .toPromise()
-      .then((data: any) => {
+      .map((data: any) => {
         console.log(data)
         return data
       })

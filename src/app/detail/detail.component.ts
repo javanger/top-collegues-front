@@ -24,13 +24,15 @@ export class DetailComponent implements OnInit {
   }
 
   detail(){
-    this.cService.detail(this.pseudo).then(data => {
+    this.cService.detail(this.pseudo)
+    .subscribe(data => {
       this.collegue = data;
    });
   }
 
   aVote(avis:Avis) {
-    this.cService.aVote(this.collegue, avis).then(data =>{
+    this.cService.aVote(this.collegue, avis)
+    .subscribe(data =>{
       this.collegue = data;
     })
   }
