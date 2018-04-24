@@ -1,0 +1,21 @@
+<app-bandeau-component></app-bandeau-component>
+<div class="row">
+
+  <div class="col-6 ml-2">
+    <input [(ngModel)]="searchText" placeholder="Rechercher">
+  </div>
+
+  <div class="col-6">
+    <button type="button" class="btn btn-primary waves-light" routerLink="/collegues/nouveau" mdbWavesEffect>Nouveau collègue</button>
+  </div>
+
+</div>
+<div class="row">
+
+  <div *ngFor="let col of listeCollegues | nomFilter : searchText" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2 mt-2 ">
+
+    <app-collegue-component [collegue]="col "></app-collegue-component>
+
+  </div>
+
+</div>
