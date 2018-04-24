@@ -1,0 +1,8 @@
+<div class ="row border border-dark mt-3">
+  <p class="mt-2 ml-2">Historique</p>
+</div>
+<div *ngIf="this.list.length !=0" class ="row border border-dark mt-2">
+  <div *ngFor="let obj of list" class="col-12 mt-2">
+    <vote [vote]="obj"></vote>
+  </div>
+</div>
