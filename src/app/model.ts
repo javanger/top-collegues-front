@@ -12,10 +12,17 @@ export class Vote{
     collegue:Collegue
     avis:Avis
     score:number
-    constructor(collegue:Collegue, avis:Avis, score:number){
+    id:number
+
+    constructor(collegue:Collegue, avis:Avis, score:number,id?:number){
         this.avis=avis
         this.collegue = collegue
         this.score = score
+        this.id=id
+    }
+
+    get Id(){
+        return this.id
     }
 
     get Collegue(){

@@ -18,10 +18,10 @@ import { ListeColleguesComponent } from './shared/liste-collegues/liste-collegue
 import { AjouterUnCollegueComponent } from './shared/ajouter-un-collegue/ajouter-un-collegue.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { VotreDernierAvisComponent } from './shared/votre-dernier-avis/votre-dernier-avis.component';
-import { ScorePipe } from './pipes/score.pipe';
-import { FiltrePipe } from './pipes/filtre.pipe';
 import { HistoriqueVoteComponent } from './shared/historique-vote/historique-vote.component';
 import { VoteComponent } from './shared/vote/vote.component';
+import { ScorePipe } from './pipes/score.pipe';
+import { FiltrePipe } from './pipes/filtre.pipe';
 
 
 const appRoutes: Routes = [

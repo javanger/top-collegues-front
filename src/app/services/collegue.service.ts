@@ -6,7 +6,6 @@ import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/observable/interval';
 import {Subject} from "rxjs/Subject";
 
 
